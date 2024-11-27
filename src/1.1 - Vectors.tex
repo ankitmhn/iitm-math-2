@@ -1,0 +1,102 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Vectors}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lec 16.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Introduction to Vectors:}
+    \begin{itemize}
+      \item Vectors are lists of numbers.
+      \item Can be thought of as rows or columns in a data table.
+    \end{itemize}
+
+  \item \textbf{Examples of Vectors from Data:}
+    \begin{itemize}
+      \item \textbf{GDP Data:} Rows represent years, and columns represent sectoral contributions to GDP.
+      \item \textbf{Cricket Statistics:} Player batting averages across teams can form row or column vectors.
+    \end{itemize}
+
+  \item \textbf{Vector Arithmetic:}
+    \begin{itemize}
+      \item \textbf{Addition:} Done component-wise; e.g., adding rows or columns in a table.
+      \item \textbf{Scalar Multiplication:} Each vector component is multiplied by the scalar.
+    \end{itemize}
+
+  \item \textbf{Physical Interpretation:}
+    \begin{itemize}
+      \item Vectors have magnitude (size) and direction.
+      \item Examples include velocity, acceleration, and force in physics.
+    \end{itemize}
+
+  \item \textbf{Mathematical Perspective:}
+    \begin{itemize}
+      \item Vectors in $R^n$: Abstract lists of $n$ real numbers.
+      \item Operations (addition and scalar multiplication) are performed algebraically without requiring a geometric interpretation.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+Vectors, at their core, are lists of numbers. Think of them as rows or columns from a table. For example:
+\begin{itemize}
+  \item In a GDP table, a vector could represent the yearly GDP of different sectors like agriculture, industry, and mining.
+  \item In cricket stats, a vector might be the batting averages of a player across different teams.
+\end{itemize}
+
+These lists (vectors) let us perform operations such as:
+\begin{enumerate}
+  \item \textbf{Adding Vectors:} Combine corresponding elements. For example:
+    \[
+      \text{If Arun buys 3 kg of rice and 2 kg of dal, and Neela buys 5 kg of rice and 6 kg of dal, their combined shopping list is } [3+5, 2+6] = [8, 8].
+    \]
+
+  \item \textbf{Scaling Vectors:} Multiply all elements by the same number. If Arun shops twice in a day, buying the same amount each time:
+    \[
+      [3 \times 2, 2 \times 2] = [6, 4].
+    \]
+\end{enumerate}
+
+\section*{Visualization and Physical Context}
+
+In physics, vectors like velocity and force have direction and magnitude. However, for this course, focus on their algebraic representation as lists. For example:
+\begin{itemize}
+  \item Adding velocity vectors involves summing their components to determine the resultant direction and speed.
+\end{itemize}
+
+\section*{Practical Example}
+
+A grocery shop tracks its stock:
+\begin{itemize}
+  \item \textbf{Initial stock:} $[150, 50, 35, 70, 25]$ (rice, dal, oil, biscuits, soap).
+  \item \textbf{Customer purchases:}
+    \[
+      [-8, -8, -4, -10, -4], \quad [-12, -5, -7, -10, -2], \quad [-3, -2, -5, -5, -1].
+    \]
+  \item \textbf{New stock arrives:} $[100, 75, 30, 80, 30]$.
+\end{itemize}
+
+Net stock is computed as:
+\[
+  [150, 50, 35, 70, 25] + [-8, -8, -4, -10, -4] + [-12, -5, -7, -10, -2] + [-3, -2, -5, -5, -1] + [100, 75, 30, 80, 30].
+\]
+
+\section*{Conclusion}
+
+By simplifying vectors as lists of numbers and focusing on operations like addition and scaling, you gain tools for managing data, solving practical problems, and understanding their use in physics and beyond.
+
+\end{document}

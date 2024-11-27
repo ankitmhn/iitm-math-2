@@ -1,0 +1,129 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Solution to a System of Linear Equations with an Invertible Coefficient Matrix}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lec23.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Invertibility of Square Matrices:}
+    \begin{itemize}
+      \item A square matrix $A$ is invertible if there exists a matrix $A^{-1}$ such that:
+        \[
+          A \cdot A^{-1} = A^{-1} \cdot A = I,
+        \]
+        where $I$ is the identity matrix.
+      \item Invertibility is equivalent to $\det(A) \neq 0$. If $\det(A) = 0$, $A$ is not invertible.
+    \end{itemize}
+
+  \item \textbf{Inverse of a $2 \times 2$ Matrix:}
+    \begin{itemize}
+      \item For $A =
+        \begin{bmatrix}
+          a & b \\
+          c & d
+        \end{bmatrix}$:
+        \[
+          A^{-1} = \frac{1}{\det(A)}
+          \begin{bmatrix}
+            d & -b \\
+            -c & a
+          \end{bmatrix}, \quad \text{where } \det(A) = ad - bc.
+        \]
+    \end{itemize}
+
+  \item \textbf{Adjugate Matrix:}
+    \begin{itemize}
+      \item The adjugate (or adjoint) matrix, $\text{adj}(A)$, is the transpose of the cofactor matrix of $A$.
+      \item If $A$ is invertible:
+        \[
+          A^{-1} = \frac{1}{\det(A)} \cdot \text{adj}(A).
+        \]
+    \end{itemize}
+
+  \item \textbf{Solution of a Linear System ($Ax = b$):}
+    \begin{itemize}
+      \item If $A$ is invertible, the solution is:
+        \[
+          x = A^{-1}b.
+        \]
+    \end{itemize}
+
+  \item \textbf{Homogeneous Systems:}
+    \begin{itemize}
+      \item A system is homogeneous if $Ax = 0$.
+      \item For a square matrix $A$:
+        \begin{enumerate}
+          \item If $\det(A) \neq 0$, the only solution is $x = 0$.
+          \item If $\det(A) = 0$, the system has infinitely many solutions.
+        \end{enumerate}
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Example 1: Solving a System Using Inverses}
+Given the system:
+\[
+  8x_1 + 8x_2 + 4x_3 = 1960, \quad 12x_1 + 5x_2 + 7x_3 = 2215, \quad 3x_1 + 2x_2 + 5x_3 = 1135,
+\]
+matrix representation:
+\[
+  A =
+  \begin{bmatrix}
+    8 & 8 & 4 \\
+    12 & 5 & 7 \\
+    3 & 2 & 5
+  \end{bmatrix},
+  \quad
+  b =
+  \begin{bmatrix}
+    1960 \\
+    2215 \\
+    1135
+  \end{bmatrix}.
+\]
+Compute $\det(A)$:
+\[
+  \det(A) = -188 \neq 0 \quad \Rightarrow A \text{ is invertible}.
+\]
+Using:
+\[
+  A^{-1} = \frac{1}{\det(A)} \cdot \text{adj}(A),
+\]
+and multiplying $A^{-1}b$, the solution is:
+\[
+  x_1 = 45, \quad x_2 = 125, \quad x_3 = 150.
+\]
+
+\textbf{Example 2: Homogeneous System}
+If $Ax = 0$:
+\begin{itemize}
+  \item If $\det(A) \neq 0$, $x = 0$ is the only solution.
+  \item If $\det(A) = 0$, there are infinitely many solutions.
+\end{itemize}
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Explored the relationship between the determinant and invertibility of square matrices.
+  \item Derived the formula for $A^{-1}$ using the adjugate matrix and applied it to solve linear systems.
+  \item Introduced homogeneous systems and their solution behavior based on $\det(A)$.
+\end{itemize}
+
+These concepts are foundational for solving linear equations and understanding matrix properties in linear algebra.
+
+\end{document}

@@ -1,0 +1,107 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Linear Dependence}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lec29.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Definition of Linear Dependence:}
+    \begin{itemize}
+      \item A set of vectors $v_1, v_2, \dots, v_n$ in a vector space $V$ is \textbf{linearly dependent} if there exist scalars $a_1, a_2, \dots, a_n$, not all zero, such that:
+        \[
+          a_1 v_1 + a_2 v_2 + \dots + a_n v_n = 0.
+        \]
+      \item Equivalently, the zero vector is a linear combination of $v_1, v_2, \dots, v_n$ with at least one non-zero coefficient.
+    \end{itemize}
+
+  \item \textbf{Key Observations:}
+    \begin{itemize}
+      \item If two vectors are linearly dependent, one is a scalar multiple of the other, and they lie on the same line.
+      \item If three vectors in $\mathbb{R}^3$ are linearly dependent, they lie on the same plane.
+      \item If a set of vectors is linearly dependent, any superset of that set is also linearly dependent.
+    \end{itemize}
+
+  \item \textbf{Linear Combinations:}
+    \begin{itemize}
+      \item A vector $v$ is a linear combination of $v_1, v_2, \dots, v_n$ if:
+        \[
+          v = a_1 v_1 + a_2 v_2 + \dots + a_n v_n,
+        \]
+        where $a_1, a_2, \dots, a_n$ are scalars.
+      \item Example:
+        \[
+          2(1, 2) + (2, 1) = (4, 5).
+        \]
+    \end{itemize}
+
+  \item \textbf{Testing for Linear Dependence:}
+    \begin{itemize}
+      \item Form the equation:
+        \[
+          a_1 v_1 + a_2 v_2 + \dots + a_n v_n = 0.
+        \]
+      \item Solve for $a_1, a_2, \dots, a_n$. If a non-trivial solution exists (i.e., not all $a_i$ are zero), the vectors are linearly dependent.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Example 1: Linear Dependence in $\mathbb{R}^2$}
+Given vectors $(1, 2)$, $(2, 1)$, and $(4, 5)$:
+\begin{itemize}
+  \item $(4, 5)$ is a linear combination of $(1, 2)$ and $(2, 1)$:
+    \[
+      2(1, 2) + (2, 1) = (4, 5).
+    \]
+  \item Rearranging:
+    \[
+      2(1, 2) + (2, 1) - (4, 5) = (0, 0).
+    \]
+  \item The zero vector is a linear combination of these vectors with non-zero coefficients, so they are linearly dependent.
+\end{itemize}
+
+\textbf{Example 2: Linear Dependence in $\mathbb{R}^3$}
+Given vectors $(2, 1, 2)$, $(3, 0, 1)$, and $(10, -4, -2)$:
+\begin{itemize}
+  \item Equation:
+    \[
+      2(2, 1, 2) - 3(3, 0, 1) + \frac{1}{2}(10, -4, -2) = (0, 0, 0).
+    \]
+  \item Since non-zero coefficients exist, these vectors are linearly dependent.
+\end{itemize}
+
+\textbf{Example 3: Linear Independence}
+Given $(0, 2, 1)$, $(2, 2, 0)$, and $(1, 2, 0)$:
+\begin{itemize}
+  \item Suppose:
+    \[
+      a(0, 2, 1) + b(2, 2, 0) + c(1, 2, 0) = (0, 0, 0).
+    \]
+  \item Solving gives $a = 0, b = 0, c = 0$. Hence, these vectors are linearly independent.
+\end{itemize}
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Defined linear dependence and provided the geometric intuition for $\mathbb{R}^2$ and $\mathbb{R}^3$.
+  \item Demonstrated how to check for linear dependence using linear combinations.
+  \item Highlighted that if a set of vectors is linearly dependent, any superset is also linearly dependent.
+\end{itemize}
+
+Linear dependence is a foundational concept for understanding the structure of vector spaces and solving systems of equations.
+
+\end{document}

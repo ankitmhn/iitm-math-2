@@ -1,0 +1,177 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Matrices}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lec 17.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Definition of Matrices:}
+    \begin{itemize}
+      \item A matrix is a rectangular array of numbers arranged in rows and columns.
+      \item Described as $m \times n$, where $m$ is the number of rows, and $n$ is the number of columns.
+      \item The $(i, j)$-th entry is the element at the intersection of the $i$-th row and $j$-th column.
+    \end{itemize}
+
+  \item \textbf{Special Types of Matrices:}
+    \begin{itemize}
+      \item \textbf{Square Matrix:} Number of rows equals the number of columns.
+      \item \textbf{Diagonal Matrix:} Non-zero entries only on the diagonal.
+      \item \textbf{Scalar Matrix:} A diagonal matrix with all diagonal entries equal.
+      \item \textbf{Identity Matrix ($I$):} A scalar matrix with all diagonal entries equal to 1.
+    \end{itemize}
+
+  \item \textbf{Operations on Matrices:}
+    \begin{itemize}
+      \item \textbf{Addition:} Add corresponding entries of two matrices of the same size.
+      \item \textbf{Scalar Multiplication:} Multiply each matrix entry by a scalar.
+      \item \textbf{Matrix Multiplication:} Multiply rows of the first matrix with columns of the second matrix and sum the products.
+        \begin{itemize}
+          \item Defined only if the number of columns in the first matrix equals the number of rows in the second matrix.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Properties:}
+    \begin{itemize}
+      \item Matrix addition is commutative ($A + B = B + A$) and associative.
+      \item Matrix multiplication is associative but not commutative.
+      \item Distributive properties:
+        \begin{itemize}
+          \item $A(B + C) = AB + AC$
+          \item $(A + B)C = AC + BC$
+          \item $\lambda(AB) = (\lambda A)B = A(\lambda B)$, where $\lambda$ is a scalar.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Application to Linear Equations:}
+    \begin{itemize}
+      \item Matrices can represent systems of linear equations, making them central to solving such systems.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+A matrix is like a table of numbers with rows and columns. For example:
+\[
+  \text{A } 2 \times 3 \text{ matrix has 2 rows and 3 columns:}
+\]
+\[
+  \begin{bmatrix}
+    1 & 2 & 3 \\
+    4 & 5 & 6
+  \end{bmatrix}.
+\]
+The $(1, 2)$-th entry is 2, found in the first row and second column.
+
+Special matrices include:
+\begin{itemize}
+  \item \textbf{Diagonal Matrix:} All non-diagonal entries are zero, e.g.,
+    \[
+      \begin{bmatrix}
+        1 & 0 & 0 \\
+        0 & -3 & 0 \\
+        0 & 0 & 4.2
+      \end{bmatrix}.
+    \]
+  \item \textbf{Scalar Matrix:} A diagonal matrix where all diagonal entries are the same, e.g.,
+    \[
+      \begin{bmatrix}
+        -3 & 0 & 0 \\
+        0 & -3 & 0 \\
+        0 & 0 & -3
+      \end{bmatrix}.
+    \]
+  \item \textbf{Identity Matrix ($I$):} A scalar matrix where diagonal entries are all 1, e.g.,
+    \[
+      \begin{bmatrix}
+        1 & 0 & 0 \\
+        0 & 1 & 0 \\
+        0 & 0 & 1
+      \end{bmatrix}.
+    \]
+\end{itemize}
+
+\section*{Operations Examples}
+
+\begin{enumerate}
+  \item \textbf{Addition:}
+    Add corresponding entries of two matrices:
+    \[
+      \begin{bmatrix}
+        1 & 2 \\
+        3 & 4
+      \end{bmatrix} +
+      \begin{bmatrix}
+        5 & 6 \\
+        7 & 8
+      \end{bmatrix} =
+      \begin{bmatrix}
+        6 & 8 \\
+        10 & 12
+      \end{bmatrix}.
+    \]
+
+  \item \textbf{Scalar Multiplication:}
+    Multiply each entry of the matrix by 3:
+    \[
+      3 \times
+      \begin{bmatrix}
+        1 & 2 \\
+        3 & 4
+      \end{bmatrix} =
+      \begin{bmatrix}
+        3 & 6 \\
+        9 & 12
+      \end{bmatrix}.
+    \]
+
+  \item \textbf{Matrix Multiplication:}
+    Multiply a $2 \times 2$ matrix by another $2 \times 2$ matrix:
+    \[
+      \begin{bmatrix}
+        1 & 2 \\
+        3 & 4
+      \end{bmatrix} \times
+      \begin{bmatrix}
+        5 & 6 \\
+        7 & 8
+      \end{bmatrix} =
+      \begin{bmatrix}
+        19 & 22 \\
+        43 & 50
+      \end{bmatrix}.
+    \]
+    Each entry is calculated by multiplying rows with columns and summing the products.
+\end{enumerate}
+
+\section*{Practical Importance}
+
+Matrices are foundational in solving systems of linear equations and are widely used in fields like physics, computer science, and data analysis.
+
+By understanding their structure, operations, and properties, you can efficiently represent and solve complex problems. For example, the matrix representation of the system:
+\[
+  3x + 4y = 5, \quad 4x + 6y = 10
+\]
+is:
+\[
+  \begin{bmatrix}
+    3 & 4 & 5 \\
+    4 & 6 & 10
+  \end{bmatrix}.
+\]
+This forms the basis for advanced methods like Gaussian elimination.
+
+\end{document}

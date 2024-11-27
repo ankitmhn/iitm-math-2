@@ -1,0 +1,184 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Systems of Linear Equations}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lec 18.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Definition:}
+    \begin{itemize}
+      \item A system of linear equations consists of multiple linear equations with the same set of unknowns.
+      \item A linear equation is of the form:
+        \[
+          a_1x_1 + a_2x_2 + \cdots + a_nx_n = b,
+        \]
+        where $x_1, x_2, \ldots, x_n$ are unknowns, $a_1, a_2, \ldots, a_n$ are coefficients, and $b$ is a constant.
+    \end{itemize}
+
+  \item \textbf{Matrix Representation:}
+    \begin{itemize}
+      \item Any system of linear equations can be represented in matrix form as:
+        \[
+          A \cdot x = b,
+        \]
+        where:
+        \[
+          A =
+          \begin{bmatrix}
+            a_{11} & a_{12} & \cdots & a_{1n} \\
+            a_{21} & a_{22} & \cdots & a_{2n} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            a_{m1} & a_{m2} & \cdots & a_{mn}
+          \end{bmatrix},
+          \quad
+          x =
+          \begin{bmatrix}
+            x_1 \\
+            x_2 \\
+            \vdots \\
+            x_n
+          \end{bmatrix},
+          \quad
+          b =
+          \begin{bmatrix}
+            b_1 \\
+            b_2 \\
+            \vdots \\
+            b_m
+          \end{bmatrix}.
+        \]
+    \end{itemize}
+
+  \item \textbf{Solutions to Systems:}
+    \begin{itemize}
+      \item A system of linear equations can have:
+        \begin{enumerate}
+          \item No solution (inconsistent system),
+          \item A unique solution,
+          \item Infinitely many solutions.
+        \end{enumerate}
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Example 1: Unique Solution}
+Buyer A buys 2 kg of rice and 1 kg of dal, while buyer B buys 3 kg of rice and 1 kg of dal. They pay Rs. 215 and Rs. 260, respectively.
+The system of linear equations is:
+\[
+  2x + y = 215, \quad 3x + y = 260,
+\]
+where $x$ is the price of rice per kg and $y$ is the price of dal per kg.
+Solving the equations:
+\[
+  x = 45, \quad y = 125.
+\]
+
+\textbf{Example 2: No Solution}
+If buyer A pays Rs. 215 and buyer B pays Rs. 400 for the same quantities, the equations become:
+\[
+  2x + y = 215, \quad 4x + 2y = 400.
+\]
+Doubling the first equation gives:
+\[
+  4x + 2y = 430,
+\]
+which contradicts the second equation ($430 \neq 400$). Hence, no solution exists.
+
+\textbf{Example 3: Infinitely Many Solutions}
+If buyer A pays Rs. 215 and buyer B pays Rs. 430, the equations are:
+\[
+  2x + y = 215, \quad 4x + 2y = 430.
+\]
+The second equation is a multiple of the first, representing the same line. Thus, infinitely many solutions exist.
+
+\section*{Connection with Geometry}
+
+\begin{itemize}
+  \item Each linear equation represents a line in 2D space.
+  \item The number of solutions corresponds to the intersection of lines:
+    \begin{itemize}
+      \item Unique solution: Lines intersect at a single point.
+      \item No solution: Lines are parallel and do not intersect.
+      \item Infinitely many solutions: Lines overlap completely.
+    \end{itemize}
+\end{itemize}
+
+\section*{Matrix Representation Examples}
+
+\textbf{Example 1:}
+The system:
+\[
+  8x + 8y + 4z = 1960, \quad 12x + 5y + 7z = 2215, \quad 3x + 2y + 5z = 1135
+\]
+is represented as:
+\[
+  A =
+  \begin{bmatrix}
+    8 & 8 & 4 \\
+    12 & 5 & 7 \\
+    3 & 2 & 5
+  \end{bmatrix},
+  \quad
+  x =
+  \begin{bmatrix}
+    x \\
+    y \\
+    z
+  \end{bmatrix},
+  \quad
+  b =
+  \begin{bmatrix}
+    1960 \\
+    2215 \\
+    1135
+  \end{bmatrix}.
+\]
+
+\textbf{Example 2:}
+The system:
+\[
+  3x + 2y + z = 6, \quad x - \frac{1}{2}y + \frac{2}{3}z = \frac{7}{6}, \quad 4x + 6y - 10z = 0
+\]
+is represented as:
+\[
+  A =
+  \begin{bmatrix}
+    3 & 2 & 1 \\
+    1 & -\frac{1}{2} & \frac{2}{3} \\
+    4 & 6 & -10
+  \end{bmatrix},
+  \quad
+  x =
+  \begin{bmatrix}
+    x \\
+    y \\
+    z
+  \end{bmatrix},
+  \quad
+  b =
+  \begin{bmatrix}
+    6 \\
+    \frac{7}{6} \\
+    0
+  \end{bmatrix}.
+\]
+
+\section*{Conclusion}
+
+We studied systems of linear equations, their representation using matrices, and the types of solutions they can have. A system can have no solution, one unique solution, or infinitely many solutions. Matrix notation simplifies working with these systems, particularly for solving or analyzing them.
+
+\end{document}

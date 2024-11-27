@@ -1,0 +1,158 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Determinants (Part 1)}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lec 19.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Definition of Determinants:}
+    \begin{itemize}
+      \item The determinant is a scalar value associated with a square matrix.
+      \item Notation: $\det(A)$ or $|A|$.
+      \item Applications:
+        \begin{itemize}
+          \item Solving systems of linear equations.
+          \item Finding the inverse of a matrix.
+          \item Applications in calculus and other advanced topics.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Determinants of Small Matrices:}
+    \begin{itemize}
+      \item \textbf{1x1 Matrix:} For $A = [a]$, $\det(A) = a$.
+      \item \textbf{2x2 Matrix:}
+        \[
+          A =
+          \begin{bmatrix}
+            a & b \\
+            c & d
+          \end{bmatrix},
+          \quad
+          \det(A) = ad - bc.
+        \]
+      \item \textbf{3x3 Matrix:}
+        \[
+          A =
+          \begin{bmatrix}
+            a_{11} & a_{12} & a_{13} \\
+            a_{21} & a_{22} & a_{23} \\
+            a_{31} & a_{32} & a_{33}
+          \end{bmatrix},
+        \]
+        \[
+          \det(A) = a_{11}
+          \begin{vmatrix}
+            a_{22} & a_{23} \\
+            a_{32} & a_{33}
+          \end{vmatrix}
+          - a_{12}
+          \begin{vmatrix}
+            a_{21} & a_{23} \\
+            a_{31} & a_{33}
+          \end{vmatrix}
+          + a_{13}
+          \begin{vmatrix}
+            a_{21} & a_{22} \\
+            a_{31} & a_{32}
+          \end{vmatrix}.
+        \]
+    \end{itemize}
+
+  \item \textbf{Properties of Determinants:}
+    \begin{itemize}
+      \item \textbf{Multiplication:} $\det(AB) = \det(A) \cdot \det(B)$.
+      \item \textbf{Inverse:} $\det(A^{-1}) = \frac{1}{\det(A)}$.
+      \item \textbf{Row/Column Operations:}
+        \begin{itemize}
+          \item Swapping two rows or columns changes the determinant's sign.
+          \item Adding a multiple of one row (or column) to another does not change the determinant.
+          \item Multiplying all entries of a row or column by a constant $t$ scales the determinant by $t$.
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Example: Determinant of a 2x2 Matrix}
+For $A =
+\begin{bmatrix}
+  2 & 3 \\
+  6 & 10
+\end{bmatrix}$,
+\[
+  \det(A) = (2 \cdot 10) - (3 \cdot 6) = 20 - 18 = 2.
+\]
+
+\textbf{Example: Determinant of a 3x3 Matrix}
+For $A =
+\begin{bmatrix}
+  2 & 4 & 1 \\
+  3 & 8 & 7 \\
+  5 & 6 & 9
+\end{bmatrix}$:
+\[
+  \det(A) = 2 \cdot
+  \begin{vmatrix}
+    8 & 7 \\
+    6 & 9
+  \end{vmatrix}
+  - 4 \cdot
+  \begin{vmatrix}
+    3 & 7 \\
+    5 & 9
+  \end{vmatrix}
+  + 1 \cdot
+  \begin{vmatrix}
+    3 & 8 \\
+    5 & 6
+  \end{vmatrix}.
+\]
+\[
+  \det(A) = 2 \cdot (72 - 42) - 4 \cdot (27 - 35) + 1 \cdot (18 - 40).
+\]
+\[
+  \det(A) = 2 \cdot 30 - 4 \cdot (-8) + 1 \cdot (-22) = 70.
+\]
+
+\section*{Special Matrices and Their Determinants}
+
+\begin{itemize}
+  \item \textbf{Identity Matrix:}
+    For $I_2 =
+    \begin{bmatrix}
+      1 & 0 \\
+      0 & 1
+    \end{bmatrix}$, $\det(I_2) = 1$.
+    Similarly, for $I_3 =
+    \begin{bmatrix}
+      1 & 0 & 0 \\
+      0 & 1 & 0 \\
+      0 & 0 & 1
+    \end{bmatrix}$, $\det(I_3) = 1$.
+\end{itemize}
+
+\section*{Conclusion}
+
+In this lecture, we explored:
+\begin{itemize}
+  \item The concept of determinants for 1x1, 2x2, and 3x3 matrices.
+  \item Properties of determinants, including their behavior under multiplication, inversion, and row/column operations.
+  \item Determinants are computed inductively, with larger matrices reduced to smaller ones.
+\end{itemize}
+
+These foundational properties of determinants will be critical in solving linear equations, understanding matrix behavior, and various applications in higher mathematics.
+
+\end{document}

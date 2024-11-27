@@ -1,0 +1,121 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Determinants (Part 3)}
+\author{Ankit Mohan \\ 24f1002261@ds.study.iitm.ac.in}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lec21.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Review of Determinants (Parts 1 and 2):}
+    \begin{itemize}
+      \item Determinants were defined inductively for $1 \times 1$, $2 \times 2$, and $3 \times 3$ matrices.
+      \item Expansion along the first row was used to compute determinants, with minors and cofactors as key components:
+        \[
+          \text{Cofactor: } C_{ij} = (-1)^{i+j} M_{ij}.
+        \]
+    \end{itemize}
+
+  \item \textbf{Expansion Along Any Row or Column:}
+    \begin{itemize}
+      \item Determinants can be computed by expanding along any row or column.
+      \item Formula for expansion along the $i$th row:
+        \[
+          \det(A) = \sum_{j=1}^n (-1)^{i+j} a_{ij} M_{ij}.
+        \]
+      \item Formula for expansion along the $j$th column:
+        \[
+          \det(A) = \sum_{i=1}^n (-1)^{i+j} a_{ij} M_{ij}.
+        \]
+    \end{itemize}
+
+  \item \textbf{Properties of Determinants:}
+    \begin{itemize}
+      \item \textbf{Multiplication:}
+        \[
+          \det(AB) = \det(A) \cdot \det(B).
+        \]
+      \item \textbf{Powers and Inverses:}
+        \[
+          \det(A^n) = (\det(A))^n, \quad \det(A^{-1}) = \frac{1}{\det(A)}.
+        \]
+      \item \textbf{Similarity Transformation:}
+        \[
+          \det(P^{-1}AP) = \det(A).
+        \]
+      \item \textbf{Transpose:}
+        \[
+          \det(A^T) = \det(A), \quad \det(A^T A) = (\det(A))^2.
+        \]
+      \item \textbf{Row/Column Operations:}
+        \begin{itemize}
+          \item Swapping two rows or columns changes the determinant's sign.
+          \item Adding a multiple of one row (or column) to another does not change the determinant.
+          \item Multiplying a row or column by $t$ scales the determinant by $t$.
+          \item Multiplying the entire matrix by $t$ scales the determinant by $t^n$, where $n$ is the matrix size.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Computational Tips:}
+    \begin{itemize}
+      \item Determinants of matrices with a zero row or column are $0$.
+      \item Determinants of matrices with a row (or column) that is a linear combination of others are $0$.
+      \item Expand along a row or column with the most zeros for easier computation.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Example: Determinant by Expansion Along the Second Row}
+For $A =
+\begin{bmatrix}
+  a_{11} & a_{12} & a_{13} \\
+  a_{21} & a_{22} & a_{23} \\
+  a_{31} & a_{32} & a_{33}
+\end{bmatrix}$:
+\[
+  \det(A) = -a_{21}
+  \begin{vmatrix}
+    a_{12} & a_{13} \\
+    a_{32} & a_{33}
+  \end{vmatrix}
+  + a_{22}
+  \begin{vmatrix}
+    a_{11} & a_{13} \\
+    a_{31} & a_{33}
+  \end{vmatrix}
+  - a_{23}
+  \begin{vmatrix}
+    a_{11} & a_{12} \\
+    a_{31} & a_{32}
+  \end{vmatrix}.
+\]
+
+\textbf{Example: Multiplying a Matrix by $t$}
+If $A$ is an $n \times n$ matrix and every element is multiplied by $t$:
+\[
+  \det(tA) = t^n \det(A).
+\]
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Expanded determinants along any row or column, showing that the method generalizes beyond the first row.
+  \item Explored additional determinant properties, including behavior under row/column operations, matrix transposes, and scalar multiplication.
+  \item Reviewed computational tips to simplify determinant calculations.
+\end{itemize}
+
+In the next lecture, we will use determinants to solve systems of linear equations, showcasing their practical applications.
+
+\end{document}

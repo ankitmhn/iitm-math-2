@@ -1,0 +1,135 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Echelon Form}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lec24.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Definition of Echelon Form:}
+    \begin{itemize}
+      \item A matrix is in \textbf{Row Echelon Form (REF)} if:
+        \begin{enumerate}
+          \item The first non-zero element in each row (called the \textit{leading entry}) is 1.
+          \item Each leading entry is to the right of the leading entry in the row above.
+          \item Rows with all zero elements are at the bottom.
+        \end{enumerate}
+      \item A matrix is in \textbf{Reduced Row Echelon Form (RREF)} if, in addition to being in REF:
+        \begin{enumerate}
+          \item Each column containing a leading 1 has all other entries in that column as 0.
+        \end{enumerate}
+    \end{itemize}
+
+  \item \textbf{Properties of Echelon Forms:}
+    \begin{itemize}
+      \item Solutions to a system of linear equations can be easily obtained when the coefficient matrix is in echelon form.
+      \item Independent variables are those corresponding to columns without leading 1s.
+      \item Dependent variables correspond to columns containing leading 1s.
+    \end{itemize}
+
+  \item \textbf{Procedure to Solve $Ax = b$:}
+    \begin{itemize}
+      \item Convert the coefficient matrix $A$ to RREF.
+      \item Identify independent and dependent variables.
+      \item Assign arbitrary values to independent variables and compute dependent variables using the equations.
+    \end{itemize}
+
+  \item \textbf{Homogeneous Systems:}
+    \begin{itemize}
+      \item For $Ax = 0$, if $A$ is in RREF:
+        \begin{enumerate}
+          \item If there are no zero rows, the system has a unique solution ($x = 0$).
+          \item If there are zero rows, the system has infinitely many solutions, parameterized by the independent variables.
+        \end{enumerate}
+    \end{itemize}
+
+  \item \textbf{Inconsistent Systems:}
+    \begin{itemize}
+      \item If a row in $A$ is all zeros, but the corresponding entry in $b$ is non-zero, the system has no solution.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Example: REF and RREF}
+For $A =
+\begin{bmatrix}
+  1 & 0 & 2 \\
+  0 & 1 & 3
+\end{bmatrix}$:
+\begin{itemize}
+  \item REF:
+    \begin{enumerate}
+      \item The first non-zero element in each row is 1.
+      \item The leading 1 in the second row is to the right of the leading 1 in the first row.
+      \item There are no zero rows.
+    \end{enumerate}
+  \item RREF:
+    \begin{enumerate}
+      \item Each column containing a leading 1 has all other entries as 0.
+    \end{enumerate}
+\end{itemize}
+
+\textbf{Example: Solving $Ax = b$}
+Given $Ax = b$ with $A$ in RREF:
+\[
+  A =
+  \begin{bmatrix}
+    1 & 0 & 2 \\
+    0 & 1 & 3
+  \end{bmatrix},
+  \quad
+  b =
+  \begin{bmatrix}
+    b_1 \\
+    b_2
+  \end{bmatrix}.
+\]
+Equations:
+\[
+  x_1 + 2x_3 = b_1, \quad x_2 + 3x_3 = b_2.
+\]
+\begin{itemize}
+  \item Assign $x_3 = c$ (independent variable).
+  \item Solve for dependent variables:
+    \[
+      x_1 = b_1 - 2c, \quad x_2 = b_2 - 3c.
+    \]
+  \item General solution:
+    \[
+      x =
+      \begin{bmatrix}
+        b_1 - 2c \\
+        b_2 - 3c \\
+        c
+      \end{bmatrix}.
+    \]
+\end{itemize}
+
+\textbf{Inconsistent Case:}
+If a row in $A$ is all zeros but the corresponding $b_i \neq 0$, then the system is inconsistent (no solution).
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Defined Row Echelon Form (REF) and Reduced Row Echelon Form (RREF).
+  \item Showed how to use RREF to solve systems of linear equations efficiently.
+  \item Analyzed solutions for consistent, inconsistent, and homogeneous systems.
+\end{itemize}
+
+This approach provides an algorithmic method to find all solutions to $Ax = b$, leveraging the structure of echelon forms.
+
+\end{document}

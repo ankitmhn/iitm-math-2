@@ -1,0 +1,163 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Cramer’s Rule}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lec22.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Cramer’s Rule:}
+    \begin{itemize}
+      \item A method for solving systems of linear equations using determinants.
+      \item Applicable when the coefficient matrix $A$ is invertible (i.e., $\det(A) \neq 0$).
+    \end{itemize}
+
+  \item \textbf{Procedure for a $2 \times 2$ System:}
+    \begin{itemize}
+      \item Consider the system:
+        \[
+          a_{11}x_1 + a_{12}x_2 = b_1, \quad a_{21}x_1 + a_{22}x_2 = b_2.
+        \]
+      \item Matrix representation: $Ax = b$, where
+        \[
+          A =
+          \begin{bmatrix}
+            a_{11} & a_{12} \\
+            a_{21} & a_{22}
+          \end{bmatrix},
+          \quad
+          b =
+          \begin{bmatrix}
+            b_1 \\
+            b_2
+          \end{bmatrix}.
+        \]
+      \item Define $A_{x_1}$ by replacing the first column of $A$ with $b$:
+        \[
+          A_{x_1} =
+          \begin{bmatrix}
+            b_1 & a_{12} \\
+            b_2 & a_{22}
+          \end{bmatrix}.
+        \]
+      \item Define $A_{x_2}$ by replacing the second column of $A$ with $b$:
+        \[
+          A_{x_2} =
+          \begin{bmatrix}
+            a_{11} & b_1 \\
+            a_{21} & b_2
+          \end{bmatrix}.
+        \]
+      \item Solutions are:
+        \[
+          x_1 = \frac{\det(A_{x_1})}{\det(A)}, \quad x_2 = \frac{\det(A_{x_2})}{\det(A)}.
+        \]
+    \end{itemize}
+
+  \item \textbf{Extension to $3 \times 3$ Systems:}
+    \begin{itemize}
+      \item Consider the system $Ax = b$, where $A$ is a $3 \times 3$ matrix, and $b$ is a column vector.
+      \item Define matrices:
+        \[
+          A_{x_1} =
+          \begin{bmatrix}
+            b_1 & a_{12} & a_{13} \\
+            b_2 & a_{22} & a_{23} \\
+            b_3 & a_{32} & a_{33}
+          \end{bmatrix},
+          \quad
+          A_{x_2} =
+          \begin{bmatrix}
+            a_{11} & b_1 & a_{13} \\
+            a_{21} & b_2 & a_{23} \\
+            a_{31} & b_3 & a_{33}
+          \end{bmatrix},
+          \quad
+          A_{x_3} =
+          \begin{bmatrix}
+            a_{11} & a_{12} & b_1 \\
+            a_{21} & a_{22} & b_2 \\
+            a_{31} & a_{32} & b_3
+          \end{bmatrix}.
+        \]
+      \item Solutions are:
+        \[
+          x_1 = \frac{\det(A_{x_1})}{\det(A)}, \quad x_2 = \frac{\det(A_{x_2})}{\det(A)}, \quad x_3 = \frac{\det(A_{x_3})}{\det(A)}.
+        \]
+    \end{itemize}
+
+  \item \textbf{Generalization to $n \times n$ Systems:}
+    \begin{itemize}
+      \item For an $n \times n$ system $Ax = b$, $A_{x_i}$ is defined by replacing the $i$th column of $A$ with $b$.
+      \item The solution is:
+        \[
+          x_i = \frac{\det(A_{x_i})}{\det(A)}.
+        \]
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Example: $2 \times 2$ System}
+Given the system:
+\[
+  4x_1 - 3x_2 = 11, \quad 6x_1 + 5x_2 = 7,
+\]
+matrix representation:
+\[
+  A =
+  \begin{bmatrix}
+    4 & -3 \\
+    6 & 5
+  \end{bmatrix},
+  \quad
+  b =
+  \begin{bmatrix}
+    11 \\
+    7
+  \end{bmatrix}.
+\]
+Compute:
+\[
+  \det(A) = (4)(5) - (-3)(6) = 38,
+\]
+\[
+  A_{x_1} =
+  \begin{bmatrix}
+    11 & -3 \\
+    7 & 5
+  \end{bmatrix},
+  \quad
+  \det(A_{x_1}) = (11)(5) - (-3)(7) = 76,
+\]
+\[
+  A_{x_2} =
+  \begin{bmatrix}
+    4 & 11 \\
+    6 & 7
+  \end{bmatrix},
+  \quad
+  \det(A_{x_2}) = (4)(7) - (11)(6) = -38.
+\]
+Solutions:
+\[
+  x_1 = \frac{\det(A_{x_1})}{\det(A)} = \frac{76}{38} = 2, \quad x_2 = \frac{\det(A_{x_2})}{\det(A)} = \frac{-38}{38} = -1.
+\]
+
+\section*{Conclusion}
+
+Cramer’s Rule provides a straightforward algorithm for solving square systems of linear equations by leveraging determinants. It requires the coefficient matrix to be invertible ($\det(A) \neq 0$) and applies to $n \times n$ systems. This method is particularly useful for small systems but may be computationally intensive for large matrices.
+
+\end{document}

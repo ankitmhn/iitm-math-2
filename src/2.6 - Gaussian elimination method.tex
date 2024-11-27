@@ -1,0 +1,131 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Gaussian Elimination Method}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lec26.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Purpose of Gaussian Elimination:}
+    \begin{itemize}
+      \item Solve systems of linear equations $Ax = b$.
+      \item Determine if a solution exists.
+      \item Find the determinant of a square matrix.
+      \item Compute the inverse of an invertible square matrix.
+    \end{itemize}
+
+  \item \textbf{Augmented Matrix:}
+    \begin{itemize}
+      \item The system $Ax = b$ is written as an augmented matrix $[A|b]$.
+      \item $A$ is an $m \times n$ matrix of coefficients, and $b$ is an $m \times 1$ column vector of constants.
+      \item The augmented matrix $[A|b]$ is of size $m \times (n+1)$.
+    \end{itemize}
+
+  \item \textbf{Gaussian Elimination Steps:}
+    \begin{enumerate}
+      \item Form the augmented matrix $[A|b]$.
+      \item Use elementary row operations to bring the matrix to Row Echelon Form (REF):
+        \begin{itemize}
+          \item Create leading 1s in the rows.
+          \item Eliminate entries below the leading 1s.
+        \end{itemize}
+      \item Further reduce to Reduced Row Echelon Form (RREF) by:
+        \begin{itemize}
+          \item Making all entries above and below each leading 1 equal to 0.
+        \end{itemize}
+    \end{enumerate}
+
+  \item \textbf{Interpreting Solutions:}
+    \begin{itemize}
+      \item If the last row of $[A|b]$ is $[0 \cdots 0 | c]$ where $c \neq 0$, the system is inconsistent (no solution).
+      \item If the system is consistent:
+        \begin{enumerate}
+          \item Identify dependent variables corresponding to leading 1s.
+          \item Assign arbitrary values to independent variables (free variables).
+          \item Solve for dependent variables by back substitution.
+        \end{enumerate}
+    \end{itemize}
+
+  \item \textbf{Homogeneous Systems ($Ax = 0$):}
+    \begin{itemize}
+      \item $x = 0$ (trivial solution) is always a solution.
+      \item If $A$ has more variables than equations ($n > m$), there are infinitely many solutions, parameterized by free variables.
+    \end{itemize}
+
+  \item \textbf{Advantages of Gaussian Elimination:}
+    \begin{itemize}
+      \item Algorithmic and efficient for solving linear systems.
+      \item Avoids repeated determinant calculations (as in Cramer’s Rule).
+      \item Simplifies finding matrix inverses and determinants.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Example 1: Augmented Matrix and Solution}
+System of equations:
+\[
+  3x_1 + 2x_2 + x_3 = 6, \quad x_1 + x_2 = 2, \quad 7x_2 + x_3 + x_4 = 8.
+\]
+Augmented matrix:
+\[
+  [A|b] =
+  \begin{bmatrix}
+    3 & 2 & 1 & 0 & 6 \\
+    1 & 1 & 0 & 0 & 2 \\
+    0 & 7 & 1 & 1 & 8
+  \end{bmatrix}.
+\]
+Steps:
+\begin{enumerate}
+  \item Divide $R_1$ by 3 to make the first pivot 1.
+  \item Eliminate entries below the pivot in the first column.
+  \item Repeat for subsequent columns to reach REF:
+    \[
+      \begin{bmatrix}
+        1 & 0 & 0 & 0 & 1 \\
+        0 & 1 & 0 & 0 & 1 \\
+        0 & 0 & 1 & 1 & 1
+      \end{bmatrix}.
+    \]
+\end{enumerate}
+Interpretation:
+\[
+  x_1 = 1, \quad x_2 = 1, \quad x_3 + x_4 = 1.
+\]
+General solution:
+\[
+  x_1 = 1, \quad x_2 = 1, \quad x_3 = 1 - c, \quad x_4 = c \quad (c \in \mathbb{R}).
+\]
+
+\textbf{Example 2: Homogeneous System}
+For $Ax = 0$, with $A$ having more variables than equations:
+\[
+  \text{Infinitely many solutions exist, parameterized by free variables.}
+\]
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Introduced Gaussian elimination as a systematic method for solving $Ax = b$.
+  \item Defined the augmented matrix and illustrated its use in solving linear systems.
+  \item Demonstrated Gaussian elimination for both consistent and inconsistent systems.
+  \item Explored the special case of homogeneous systems and their solution properties.
+\end{itemize}
+
+Gaussian elimination is a versatile and efficient tool for solving linear systems, computing determinants, and finding matrix inverses.
+
+\end{document}
