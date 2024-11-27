@@ -1,0 +1,127 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Affine Subspaces and Affine Mappings}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lec45.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Definition of Affine Subspace:}
+    \begin{itemize}
+      \item An affine subspace $L$ of a vector space $V$ is a subset of $V$ defined as:
+        \[
+          L = v + U,
+        \]
+        where:
+        \begin{itemize}
+          \item $v \in V$ is a fixed vector.
+          \item $U$ is a vector subspace of $V$.
+        \end{itemize}
+      \item $L$ is formed by translating the subspace $U$ by the vector $v$.
+    \end{itemize}
+
+  \item \textbf{Dimension of Affine Subspace:}
+    \begin{itemize}
+      \item If $U$ is $n$-dimensional, the corresponding affine subspace $L$ is also considered $n$-dimensional.
+      \item The subspace $U$ associated with $L$ is unique.
+    \end{itemize}
+
+  \item \textbf{Affine Subspaces in $\mathbb{R}^n$:}
+    \begin{itemize}
+      \item In $\mathbb{R}^2$, affine subspaces include:
+        \begin{itemize}
+          \item Points (shifting the origin by a vector).
+          \item Lines (translating a line passing through the origin).
+          \item The entire plane $\mathbb{R}^2$ (a subspace translated by 0).
+        \end{itemize}
+      \item In $\mathbb{R}^3$, affine subspaces include:
+        \begin{itemize}
+          \item Points.
+          \item Lines.
+          \item Planes.
+          \item The entire space $\mathbb{R}^3$.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Affine Subspace as Solution Sets:}
+    \begin{itemize}
+      \item For a linear system $Ax = b$, the solution set $L$ is:
+        \[
+          L = v + n(A),
+        \]
+        where:
+        \begin{itemize}
+          \item $n(A)$ is the null space of $A$.
+          \item $v$ is any particular solution to $Ax = b$.
+        \end{itemize}
+      \item If $b = 0$, the system is homogeneous, and $L = n(A)$ is a subspace.
+      \item If $b \neq 0$ and lies in the column space of $A$, the solution set $L$ is an affine subspace.
+    \end{itemize}
+
+  \item \textbf{Affine Mappings:}
+    \begin{itemize}
+      \item Let $L$ and $L'$ be affine subspaces of $V$ and $W$, respectively.
+      \item A function $f: L \to L'$ is an \textbf{affine mapping} if:
+        \[
+          f(v + u) = f(v) + T(u),
+        \]
+        where:
+        \begin{itemize}
+          \item $T: U \to U'$ is a linear transformation.
+          \item $v \in L$, $u \in U$, and $f(v) \in L'$.
+        \end{itemize}
+      \item Every affine mapping can be decomposed as a translation followed by a linear transformation.
+    \end{itemize}
+
+  \item \textbf{Example: Affine Mapping in $\mathbb{R}^3$:}
+    \begin{itemize}
+      \item Define $f(x, y, z) = (2x + 3y + 2, 4x - 5y + 3)$.
+      \item This is not a linear transformation since $f(0, 0, 0) \neq (0, 0)$.
+      \item However, $f$ can be written as:
+        \[
+          f(x, y, z) = (2, 3) + (2x + 3y, 4x - 5y),
+        \]
+        where the second term is a linear transformation.
+      \item Therefore, $f$ is an affine mapping.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Affine Subspace}
+Affine subspaces generalize vector subspaces by allowing translation:
+\begin{itemize}
+  \item Example in $\mathbb{R}^2$: A line not passing through the origin is an affine subspace obtained by translating a line passing through the origin.
+  \item Solution sets of non-homogeneous systems $Ax = b$ are affine subspaces when $b$ lies in the column space of $A$.
+\end{itemize}
+
+\textbf{Affine Mapping}
+Affine mappings allow linear transformations with a translation:
+\begin{itemize}
+  \item Example: $f(x, y) = (2x + 1, y - 1)$ translates by $(1, -1)$ and scales $(x, y)$ by linear rules.
+\end{itemize}
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Introduced affine subspaces as translations of vector subspaces.
+  \item Showed how solution sets of linear equations form affine subspaces.
+  \item Defined affine mappings and demonstrated their decomposition into translations and linear transformations.
+\end{itemize}
+
+Affine subspaces and mappings extend linear algebra concepts, particularly in solving non-homogeneous systems and transformations in affine geometry.
+
+\end{document}

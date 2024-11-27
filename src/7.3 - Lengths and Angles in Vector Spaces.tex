@@ -1,0 +1,113 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Lengths and Angles in Vector Spaces}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lec46.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Dot Product in $\mathbb{R}^n$:}
+    \begin{itemize}
+      \item The dot product of two vectors in $\mathbb{R}^n$, $u = (u_1, u_2, \dots, u_n)$ and $v = (v_1, v_2, \dots, v_n)$, is defined as:
+        \[
+          u \cdot v = \sum_{i=1}^n u_i v_i.
+        \]
+      \item Example in $\mathbb{R}^2$: For $u = (3, 4)$ and $v = (2, 7)$:
+        \[
+          u \cdot v = 3 \cdot 2 + 4 \cdot 7 = 6 + 28 = 34.
+        \]
+    \end{itemize}
+
+  \item \textbf{Length (Norm) of a Vector:}
+    \begin{itemize}
+      \item The length (or norm) of a vector $v = (v_1, v_2, \dots, v_n)$ is:
+        \[
+          \|v\| = \sqrt{v \cdot v} = \sqrt{\sum_{i=1}^n v_i^2}.
+        \]
+      \item Example in $\mathbb{R}^2$: For $v = (3, 4)$:
+        \[
+          \|v\| = \sqrt{3^2 + 4^2} = \sqrt{9 + 16} = 5.
+        \]
+      \item Example in $\mathbb{R}^3$: For $v = (4, 3, 3)$:
+        \[
+          \|v\| = \sqrt{4^2 + 3^2 + 3^2} = \sqrt{16 + 9 + 9} = \sqrt{34}.
+        \]
+    \end{itemize}
+
+  \item \textbf{Angle Between Two Vectors:}
+    \begin{itemize}
+      \item The angle $\theta$ between two vectors $u$ and $v$ in $\mathbb{R}^n$ is given by:
+        \[
+          \cos(\theta) = \frac{u \cdot v}{\|u\| \|v\|}.
+        \]
+      \item $\theta$ can be calculated as:
+        \[
+          \theta = \cos^{-1}\left(\frac{u \cdot v}{\|u\| \|v\|}\right).
+        \]
+      \item Example in $\mathbb{R}^3$: For $u = (1, 0, 0)$ and $v = (1, 0, 1)$:
+        \[
+          u \cdot v = 1, \quad \|u\| = 1, \quad \|v\| = \sqrt{2}.
+        \]
+        \[
+          \cos(\theta) = \frac{1}{1 \cdot \sqrt{2}} = \frac{1}{\sqrt{2}} \implies \theta = \frac{\pi}{4}.
+        \]
+    \end{itemize}
+
+  \item \textbf{Key Observations:}
+    \begin{itemize}
+      \item The length of a vector $v$ is the square root of the dot product of $v$ with itself:
+        \[
+          \|v\| = \sqrt{v \cdot v}.
+        \]
+      \item The dot product and angle are related through cosine, providing a geometric interpretation of their relationship.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Dot Product}
+The dot product of two vectors is a scalar obtained by multiplying their corresponding components and summing them:
+\[
+  u = (3, 4), \, v = (2, 7) \implies u \cdot v = 3 \cdot 2 + 4 \cdot 7 = 34.
+\]
+
+\textbf{Length of a Vector}
+The length (norm) of a vector is computed as the square root of the sum of the squares of its components:
+\[
+  v = (3, 4) \implies \|v\| = \sqrt{3^2 + 4^2} = 5.
+\]
+
+\textbf{Angle Between Vectors}
+The angle between two vectors is computed using the cosine formula:
+\[
+  \cos(\theta) = \frac{u \cdot v}{\|u\| \|v\|}.
+\]
+For $u = (1, 0, 0)$ and $v = (1, 0, 1)$:
+\[
+  \cos(\theta) = \frac{1}{\sqrt{2}} \implies \theta = \frac{\pi}{4}.
+\]
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Defined the dot product, length, and angle between vectors in $\mathbb{R}^n$.
+  \item Demonstrated the geometric significance of these operations.
+  \item Provided examples to compute lengths and angles in various dimensions.
+\end{itemize}
+
+These concepts are foundational in linear algebra, bridging algebraic and geometric interpretations of vector spaces.
+
+\end{document}

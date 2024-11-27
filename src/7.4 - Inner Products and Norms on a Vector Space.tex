@@ -1,0 +1,129 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Inner Products and Norms on a Vector Space}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lec47.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Definition of Inner Product:}
+    \begin{itemize}
+      \item An inner product on a vector space $V$ is a function $\langle \cdot, \cdot \rangle: V \times V \to \mathbb{R}$ that satisfies:
+        \begin{enumerate}
+          \item \textbf{Positivity:} $\langle v, v \rangle > 0$ for all $v \neq 0$, and $\langle v, v \rangle = 0$ if $v = 0$.
+          \item \textbf{Linearity in the first argument:}
+            \[
+              \langle v_1 + v_2, v_3 \rangle = \langle v_1, v_3 \rangle + \langle v_2, v_3 \rangle, \quad \langle c v_1, v_2 \rangle = c \langle v_1, v_2 \rangle,
+            \]
+            where $c \in \mathbb{R}$.
+          \item \textbf{Symmetry:}
+            \[
+              \langle v_1, v_2 \rangle = \langle v_2, v_1 \rangle.
+            \]
+        \end{enumerate}
+      \item A vector space equipped with an inner product is called an \textbf{inner product space}.
+    \end{itemize}
+
+  \item \textbf{Examples of Inner Products:}
+    \begin{itemize}
+      \item The \textbf{dot product} in $\mathbb{R}^n$:
+        \[
+          \langle u, v \rangle = u \cdot v = \sum_{i=1}^n u_i v_i.
+        \]
+      \item Non-standard inner product in $\mathbb{R}^2$:
+        \[
+          \langle u, v \rangle = x_1 y_1 - (x_1 y_2 + x_2 y_1) + 2x_2 y_2,
+        \]
+        where $u = (x_1, x_2)$ and $v = (y_1, y_2)$. This inner product is verified using matrix representation:
+        \[
+          \langle u, v \rangle = u^T
+          \begin{bmatrix}
+            1 & -1 \\
+            -1 & 2
+          \end{bmatrix}
+          v.
+        \]
+    \end{itemize}
+
+  \item \textbf{Definition of Norm:}
+    \begin{itemize}
+      \item A norm on a vector space $V$ is a function $\| \cdot \|: V \to \mathbb{R}$ satisfying:
+        \begin{enumerate}
+          \item \textbf{Positivity:} $\|v\| \geq 0$ for all $v$, and $\|v\| = 0$ if and only if $v = 0$.
+          \item \textbf{Homogeneity:} $\|c v\| = |c| \|v\|$ for all scalars $c$.
+          \item \textbf{Triangle inequality:} $\|v + w\| \leq \|v\| + \|w\|$ for all $v, w \in V$.
+        \end{enumerate}
+      \item The \textbf{Euclidean norm} (length) in $\mathbb{R}^n$:
+        \[
+          \|v\| = \sqrt{\sum_{i=1}^n v_i^2}.
+        \]
+      \item $L^1$ norm in $\mathbb{R}^n$:
+        \[
+          \|v\|_1 = \sum_{i=1}^n |v_i|.
+        \]
+    \end{itemize}
+
+  \item \textbf{Relation Between Inner Product and Norm:}
+    \begin{itemize}
+      \item If $V$ is an inner product space, a norm can be defined as:
+        \[
+          \|v\| = \sqrt{\langle v, v \rangle}.
+        \]
+      \item This norm satisfies all norm axioms:
+        \begin{itemize}
+          \item \textbf{Positivity:} $\|v\| = 0$ if and only if $v = 0$.
+          \item \textbf{Homogeneity:} $\|c v\| = |c| \|v\|$ due to properties of the inner product.
+          \item \textbf{Triangle inequality:} $\|v + w\|^2 \leq (\|v\| + \|w\|)^2$ follows from expanding and bounding $\langle v + w, v + w \rangle$.
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Inner Product:}
+A generalization of the dot product:
+\[
+  \langle u, v \rangle = u \cdot v.
+\]
+For $\mathbb{R}^2$, another example:
+\[
+  \langle u, v \rangle = x_1 y_1 - (x_1 y_2 + x_2 y_1) + 2x_2 y_2.
+\]
+
+\textbf{Norm:}
+The length of a vector can be defined as:
+\[
+  \|v\| = \sqrt{\langle v, v \rangle}.
+\]
+Other norms, like $L^1$, measure length differently:
+\[
+  \|v\|_1 = \sum |v_i|.
+\]
+
+\textbf{Connection:}
+An inner product induces a norm that satisfies all the standard properties of length.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Defined inner products and norms on vector spaces.
+  \item Demonstrated examples of inner products and norms in $\mathbb{R}^n$.
+  \item Highlighted the relationship between inner products and norms, showing how an inner product induces a norm.
+\end{itemize}
+
+Inner products and norms extend the concepts of length and angles to general vector spaces, forming the foundation of functional analysis and advanced geometry.
+
+\end{document}
