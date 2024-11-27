@@ -1,0 +1,105 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: The Gram-Schmidt Process}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: The Gram-Schmidt process.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Definition of Gram-Schmidt Process:}
+    \begin{itemize}
+      \item The Gram-Schmidt process converts any basis $\{x_1, x_2, \dots, x_n\}$ of an inner product space into an orthonormal basis $\{w_1, w_2, \dots, w_n\}$.
+      \item An orthonormal basis is a set of mutually orthogonal vectors, each with norm 1:
+        \[
+          \langle w_i, w_j \rangle = 0 \quad \text{for } i \neq j, \quad \|w_i\| = 1.
+        \]
+    \end{itemize}
+
+  \item \textbf{Procedure for Gram-Schmidt Process:}
+    \begin{enumerate}
+      \item Start with a basis $\{x_1, x_2, \dots, x_n\}$.
+      \item Define $v_1 = x_1$ and $w_1 = \frac{v_1}{\|v_1\|}$.
+      \item For $i \geq 2$, define:
+        \[
+          v_i = x_i - \sum_{j=1}^{i-1} \langle x_i, w_j \rangle w_j, \quad w_i = \frac{v_i}{\|v_i\|}.
+        \]
+      \item The result is an orthonormal basis $\{w_1, w_2, \dots, w_n\}$.
+    \end{enumerate}
+
+  \item \textbf{Key Concepts:}
+    \begin{itemize}
+      \item The Gram-Schmidt process relies on projections to iteratively remove components of $x_i$ in the direction of the previous orthonormal vectors.
+      \item Each $v_i$ is orthogonal to all $v_j$ for $j < i$, ensuring orthogonality.
+    \end{itemize}
+
+  \item \textbf{Examples:}
+    \begin{itemize}
+      \item Example in $\mathbb{R}^3$: Starting basis $\{(1, 2, 2), (-1, 0, 2), (0, 0, 1)\}$:
+        \begin{itemize}
+          \item Step 1: $v_1 = (1, 2, 2)$, $w_1 = \frac{1}{3}(1, 2, 2)$.
+          \item Step 2: $v_2 = (-1, 0, 2) - \langle (-1, 0, 2), w_1 \rangle w_1$.
+            \[
+              \langle (-1, 0, 2), w_1 \rangle = \frac{1}{3}(-1 \cdot 1 + 0 \cdot 2 + 2 \cdot 2) = \frac{3}{9}.
+            \]
+            \[
+              v_2 = (-1, 0, 2) - \frac{1}{3}(1, 2, 2) = (-\frac{4}{3}, -\frac{2}{3}, \frac{4}{3}), \quad w_2 = \frac{1}{3}(-4, -2, 4).
+            \]
+          \item Step 3: $v_3 = (0, 0, 1) - \langle (0, 0, 1), w_1 \rangle w_1 - \langle (0, 0, 1), w_2 \rangle w_2$.
+            \[
+              w_3 = \frac{1}{3}(2, -2, 1).
+            \]
+          \item Orthonormal basis:
+            \[
+              \left\{\frac{1}{3}(1, 2, 2), \frac{1}{3}(-4, -2, 4), \frac{1}{3}(2, -2, 1)\right\}.
+            \]
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Applications of Gram-Schmidt Process:}
+    \begin{itemize}
+      \item Converting any basis into an orthonormal basis for simplified computations in linear algebra.
+      \item Facilitating projections and decompositions, such as in QR decomposition of matrices.
+      \item Useful in functional analysis, signal processing, and data science.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Gram-Schmidt Process:}
+A step-by-step method to convert any basis into an orthonormal basis by iteratively removing components along previous directions.
+
+\textbf{Example in $\mathbb{R}^3$:}
+Start with $(1, 2, 2)$, $(-1, 0, 2)$, $(0, 0, 1)$:
+\begin{itemize}
+  \item Normalize $(1, 2, 2)$ to get the first orthonormal vector.
+  \item Subtract projections to make $(-1, 0, 2)$ orthogonal to $(1, 2, 2)$, then normalize.
+  \item Repeat for $(0, 0, 1)$ to make it orthogonal to both previous vectors, then normalize.
+\end{itemize}
+
+\textbf{Applications:}
+The Gram-Schmidt process is critical in transforming vector spaces, enabling simplified calculations, particularly with projections and decompositions.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Defined the Gram-Schmidt process.
+  \item Demonstrated its use in generating orthonormal bases from arbitrary bases.
+  \item Highlighted applications in linear algebra and computational mathematics.
+\end{itemize}
+
+The Gram-Schmidt process is a foundational tool in linear algebra, widely used in both theoretical and applied contexts.
+
+\end{document}

@@ -1,0 +1,129 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Projections Using Inner Products}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Projections using inner products.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Definition of Projection:}
+    \begin{itemize}
+      \item Let $V$ be an inner product space, $v \in V$, and $W$ a subspace of $V$.
+      \item The projection of $v$ onto $W$ is the vector in $W$ that is closest to $v$, denoted $\text{proj}_W(v)$.
+      \item This is determined using the inner product:
+        \[
+          \text{proj}_W(v) = \sum_{i=1}^n \langle v, v_i \rangle v_i,
+        \]
+        where $\{v_1, v_2, \dots, v_n\}$ is an orthonormal basis for $W$.
+    \end{itemize}
+
+  \item \textbf{Properties of Projection:}
+    \begin{itemize}
+      \item Projections minimize the distance:
+        \[
+          \|v - \text{proj}_W(v)\| \leq \|v - w\| \quad \text{for all } w \in W.
+        \]
+      \item The formula for $\text{proj}_W(v)$ is independent of the choice of orthonormal basis.
+      \item If $v \in W$, then $\text{proj}_W(v) = v$.
+      \item If $v \perp W$, then $\text{proj}_W(v) = 0$.
+    \end{itemize}
+
+  \item \textbf{Projection onto a Single Vector:}
+    \begin{itemize}
+      \item For a subspace spanned by a single vector $w$, the projection is:
+        \[
+          \text{proj}_w(v) = \frac{\langle v, w \rangle}{\|w\|^2} w.
+        \]
+      \item This is equivalent to scaling $w$ to minimize the distance between $v$ and the line through $w$.
+    \end{itemize}
+
+  \item \textbf{Projection as a Linear Transformation:}
+    \begin{itemize}
+      \item The projection operator $P_W: V \to V$ is defined as $P_W(v) = \text{proj}_W(v)$.
+      \item $P_W$ is a linear transformation with the following properties:
+        \begin{enumerate}
+          \item $P_W^2 = P_W$ (idempotence).
+          \item $\text{Im}(P_W) = W$ (image of $P_W$ is $W$).
+          \item $\ker(P_W) = W^\perp$ (null space of $P_W$ is the orthogonal complement of $W$).
+        \end{enumerate}
+    \end{itemize}
+
+  \item \textbf{Examples of Projections:}
+    \begin{itemize}
+      \item \textbf{Example 1: Projection in $\mathbb{R}^2$:}
+        \begin{itemize}
+          \item Subspace $W$ spanned by $(3, 1)$.
+          \item Vector $v = (1, 3)$.
+          \item Orthonormal basis for $W$: $\frac{1}{\sqrt{10}}(3, 1)$.
+          \item Compute projection:
+            \[
+              \text{proj}_W(v) = \frac{\langle v, (3, 1) \rangle}{\|(3, 1)\|^2} (3, 1).
+            \]
+            Result:
+            \[
+              \text{proj}_W(v) = (1.8, 0.6).
+            \]
+        \end{itemize}
+      \item \textbf{Example 2: Projection in $\mathbb{R}^3$:}
+        \begin{itemize}
+          \item Subspace $W$ spanned by $(1, 0, 0)$ and $(0, 1, 0)$ (the $xy$-plane).
+          \item Vector $v = (2, 3, 5)$.
+          \item Projection:
+            \[
+              \text{proj}_W(v) = (2, 3, 0).
+            \]
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Projection Using Orthogonal Bases:}
+    \begin{itemize}
+      \item If $\{w_1, w_2, \dots, w_k\}$ is an orthogonal basis for $W$, normalize each vector:
+        \[
+          u_i = \frac{w_i}{\|w_i\|}.
+        \]
+      \item Compute projection as:
+        \[
+          \text{proj}_W(v) = \sum_{i=1}^k \frac{\langle v, w_i \rangle}{\|w_i\|^2} w_i.
+        \]
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Projection in Geometry:}
+Projections minimize the distance between a vector $v$ and a subspace $W$, like finding the "shadow" of $v$ on $W$.
+
+\textbf{Key Formula:}
+The projection of $v$ onto $W$ is:
+\[
+  \text{proj}_W(v) = \sum_{i=1}^n \langle v, v_i \rangle v_i,
+\]
+where $\{v_1, v_2, \dots, v_n\}$ is an orthonormal basis for $W$.
+
+\textbf{Applications:}
+Projections simplify computations in vector geometry, linear transformations, and orthogonal decompositions.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Defined projections in inner product spaces.
+  \item Demonstrated how projections work geometrically and algebraically.
+  \item Showed how projections relate to linear transformations and their properties.
+\end{itemize}
+
+Projections are fundamental in linear algebra, with applications in optimization, computer graphics, and signal processing.
+
+\end{document}

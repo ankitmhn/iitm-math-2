@@ -1,0 +1,104 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Orthonormal Basis}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: What is an orthonormal basis (1).pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Orthonormal Sets:}
+    \begin{itemize}
+      \item A set of vectors $\{v_1, v_2, \dots, v_k\}$ in an inner product space is orthonormal if:
+        \begin{enumerate}
+          \item The vectors are mutually orthogonal:
+            \[
+              \langle v_i, v_j \rangle = 0 \quad \text{for } i \neq j.
+            \]
+          \item Each vector has norm 1:
+            \[
+              \|v_i\| = 1 \implies \langle v_i, v_i \rangle = 1.
+            \]
+        \end{enumerate}
+      \item Example in $\mathbb{R}^4$ with the standard dot product:
+        \[
+          \left\{\frac{1}{\sqrt{3}}(1, 1, 1, 0), \frac{1}{\sqrt{42}}(2, 1, 1, 6), \frac{1}{3}(2, 0, 2, -1)\right\}
+        \]
+        is an orthonormal set.
+    \end{itemize}
+
+  \item \textbf{Orthonormal Basis:}
+    \begin{itemize}
+      \item An orthonormal basis is an orthonormal set that is also a basis for the vector space.
+      \item Equivalently, it is an orthogonal basis where each vector has norm 1.
+      \item The standard basis in $\mathbb{R}^n$ with the dot product is an example of an orthonormal basis.
+      \item Example in $\mathbb{R}^3$:
+        \[
+          \left\{\frac{1}{3}(1, 2, 2), \frac{1}{3}(-2, -1, 2), \frac{1}{3}(2, -2, 1)\right\}.
+        \]
+    \end{itemize}
+
+  \item \textbf{Constructing an Orthonormal Basis:}
+    \begin{itemize}
+      \item From an orthogonal set $\{v_1, v_2, \dots, v_k\}$, create an orthonormal set $\{u_1, u_2, \dots, u_k\}$ by dividing each vector by its norm:
+        \[
+          u_i = \frac{v_i}{\|v_i\|}.
+        \]
+      \item This method preserves orthogonality while ensuring each vector has norm 1.
+      \item Example in $\mathbb{R}^2$:
+        \[
+          \gamma = \left\{(1, 3), (-3, 1)\right\} \quad \text{becomes} \quad \beta = \left\{\frac{1}{\sqrt{10}}(1, 3), \frac{1}{\sqrt{10}}(-3, 1)\right\}.
+        \]
+    \end{itemize}
+
+  \item \textbf{Importance of Orthonormal Bases:}
+    \begin{itemize}
+      \item Given an orthonormal basis $\{v_1, v_2, \dots, v_n\}$ for $V$, any vector $v \in V$ can be uniquely expressed as:
+        \[
+          v = c_1 v_1 + c_2 v_2 + \dots + c_n v_n,
+        \]
+        where:
+        \[
+          c_i = \langle v, v_i \rangle.
+        \]
+      \item This simplifies the computation of coefficients in a linear combination, avoiding the need to solve systems of equations.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Orthonormal Sets:}
+A set of vectors is orthonormal if they are perpendicular (orthogonal) and have a length (norm) of 1.
+
+\textbf{Orthonormal Basis:}
+An orthonormal basis is a maximal orthonormal set that spans the entire vector space. For example, the standard basis in $\mathbb{R}^n$ is orthonormal.
+
+\textbf{Constructing an Orthonormal Basis:}
+Divide each vector in an orthogonal set by its norm to make it orthonormal.
+
+\textbf{Applications:}
+With an orthonormal basis, coefficients in a linear combination can be computed as inner products.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Defined orthonormal sets and orthonormal bases.
+  \item Showed how to construct an orthonormal basis from an orthogonal set.
+  \item Highlighted the computational advantages of using orthonormal bases.
+\end{itemize}
+
+Orthonormal bases streamline vector space computations, making them crucial in linear algebra and applications like data science.
+
+\end{document}

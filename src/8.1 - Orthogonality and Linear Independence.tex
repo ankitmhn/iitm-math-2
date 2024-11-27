@@ -1,0 +1,115 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Orthogonality and Linear Independence}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lec48.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Orthogonality in $\mathbb{R}^n$:}
+    \begin{itemize}
+      \item Two vectors $u$ and $v$ in $\mathbb{R}^n$ are orthogonal if the angle $\theta$ between them is $90^\circ$, which implies:
+        \[
+          \cos(\theta) = 0 \implies u \cdot v = 0.
+        \]
+      \item Example: The vectors $(1, 2, 3)$ and $(2, 2, -2)$ are orthogonal because:
+        \[
+          1 \cdot 2 + 2 \cdot 2 + 3 \cdot (-2) = 2 + 4 - 6 = 0.
+        \]
+    \end{itemize}
+
+  \item \textbf{General Definition of Orthogonality:}
+    \begin{itemize}
+      \item In an inner product space $V$, two vectors $u$ and $v$ are orthogonal if:
+        \[
+          \langle u, v \rangle = 0,
+        \]
+        where $\langle \cdot, \cdot \rangle$ is the inner product.
+      \item Example in $\mathbb{R}^2$ with a non-standard inner product:
+        \[
+          \langle u, v \rangle = x_1 y_1 - (x_1 y_2 + x_2 y_1) + 2x_2 y_2.
+        \]
+        Vectors $(1, 1)$ and $(1, 0)$ are orthogonal:
+        \[
+          \langle (1, 1), (1, 0) \rangle = 1 \cdot 1 - (1 \cdot 0 + 1 \cdot 1) + 2 \cdot 1 \cdot 0 = 0.
+        \]
+      \item Orthogonality depends on the chosen inner product.
+    \end{itemize}
+
+  \item \textbf{Orthogonal Sets:}
+    \begin{itemize}
+      \item A set of vectors $\{v_1, v_2, \dots, v_k\}$ in $V$ is orthogonal if:
+        \[
+          \langle v_i, v_j \rangle = 0 \quad \text{for all } i \neq j.
+        \]
+      \item Example: In $\mathbb{R}^3$ with the dot product, the set $\{(4, 3, -2), (-3, 2, -3), (-5, 18, 17)\}$ is orthogonal:
+        \begin{align*}
+          (4, 3, -2) \cdot (-3, 2, -3) &= -12 + 6 + 6 = 0, \\
+          (4, 3, -2) \cdot (-5, 18, 17) &= -20 + 54 - 34 = 0, \\
+          (-3, 2, -3) \cdot (-5, 18, 17) &= 15 + 36 - 51 = 0.
+        \end{align*}
+    \end{itemize}
+
+  \item \textbf{Orthogonality and Linear Independence:}
+    \begin{itemize}
+      \item An orthogonal set of non-zero vectors is always linearly independent.
+      \item Proof sketch:
+        \begin{itemize}
+          \item Assume $\sum_{i=1}^k c_i v_i = 0$.
+          \item Taking the inner product with $v_1$, only the term $c_1 \langle v_1, v_1 \rangle$ remains (since $\langle v_i, v_1 \rangle = 0$ for $i \neq 1$).
+          \item $\langle v_1, v_1 \rangle > 0 \implies c_1 = 0$.
+          \item Repeating for all $v_i$, we conclude $c_i = 0$ for all $i$.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Orthogonal Basis:}
+    \begin{itemize}
+      \item A basis $\{v_1, v_2, \dots, v_n\}$ of $V$ is orthogonal if it is an orthogonal set.
+      \item A basis is orthogonal if and only if it is a maximal orthogonal set.
+      \item Example:
+        \begin{itemize}
+          \item In $\mathbb{R}^3$, $\{(4, 3, -2), (-3, 2, -3), (-5, 18, 17)\}$ is an orthogonal basis since it is orthogonal and has size 3, the dimension of $\mathbb{R}^3$.
+          \item In $\mathbb{R}^2$ with the non-standard inner product:
+            \[
+              \langle u, v \rangle = x_1 y_1 - (x_1 y_2 + x_2 y_1) + 2x_2 y_2,
+            \]
+            the set $\{(1, 1), (1, 0)\}$ forms an orthogonal basis.
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Orthogonal Vectors:}
+Vectors are orthogonal if their inner product is 0. In $\mathbb{R}^n$, this corresponds to being at right angles.
+
+\textbf{Orthogonal Sets:}
+A set of vectors is orthogonal if every pair in the set is orthogonal. Orthogonal sets are always linearly independent.
+
+\textbf{Orthogonal Basis:}
+An orthogonal basis is an orthogonal set that spans the entire vector space. For example, the standard basis in $\mathbb{R}^n$ is an orthogonal basis with the dot product.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Defined orthogonality using inner products.
+  \item Explored the relationship between orthogonal sets and linear independence.
+  \item Introduced orthogonal bases and provided examples in different inner product spaces.
+\end{itemize}
+
+Orthogonality simplifies the study of vector spaces, making linear independence checks and computations more efficient.
+
+\end{document}
