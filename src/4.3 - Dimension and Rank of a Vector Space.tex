@@ -1,0 +1,136 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Dimension and Rank of a Vector Space}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lec34.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Definition of Basis:}
+    \begin{itemize}
+      \item A basis for a vector space $V$ is a set of vectors that is:
+        \begin{enumerate}
+          \item \textbf{Linearly Independent:} The only solution to a linear combination equaling the zero vector is for all coefficients to be zero.
+          \item \textbf{Spanning:} Every vector in $V$ can be expressed as a linear combination of the basis vectors.
+        \end{enumerate}
+    \end{itemize}
+
+  \item \textbf{Dimension of a Vector Space:}
+    \begin{itemize}
+      \item The \textbf{dimension} (or \textbf{rank}) of a vector space $V$ is the number of vectors in any basis of $V$.
+      \item The dimension is denoted by $\dim(V)$ or $\text{rank}(V)$.
+      \item Every vector space has a basis, and all bases of a vector space have the same size.
+    \end{itemize}
+
+  \item \textbf{Examples:}
+    \begin{itemize}
+      \item The dimension of $\mathbb{R}^n$ is $n$, with the standard basis $\{e_1, e_2, \dots, e_n\}$.
+      \item For subspaces of $\mathbb{R}^3$, the dimension depends on the basis of the subspace. For example:
+        \begin{itemize}
+          \item The $xy$-plane in $\mathbb{R}^3$ has dimension 2, with basis $\{(1, 0, 0), (0, 1, 0)\}$.
+          \item A line through the origin in $\mathbb{R}^3$ has dimension 1, with a single basis vector.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Finding the Dimension:}
+    \begin{itemize}
+      \item Two methods to compute the dimension:
+        \begin{enumerate}
+          \item \textbf{Finding a Basis:} Use appending or deleting methods to construct a basis and count the number of vectors.
+          \item \textbf{Using Matrices:} Write vectors that span the subspace as rows of a matrix and reduce it to row echelon form (or reduced row echelon form). The number of non-zero rows is the dimension.
+        \end{enumerate}
+    \end{itemize}
+
+  \item \textbf{Rank of a Matrix:}
+    \begin{itemize}
+      \item The \textbf{rank} of a matrix $A$ is defined as:
+        \begin{itemize}
+          \item The dimension of the column space of $A$ (span of the column vectors).
+          \item The dimension of the row space of $A$ (span of the row vectors).
+        \end{itemize}
+      \item A fundamental result states that the column rank equals the row rank.
+    \end{itemize}
+
+  \item \textbf{Example: Computing Rank and Dimension}
+    \begin{itemize}
+      \item Consider $W \subseteq \mathbb{R}^3$ spanned by $\{(1, 0, 0), (0, 1, 0), (3, 5, 0)\}$:
+        \begin{enumerate}
+          \item The vector $(3, 5, 0)$ is a linear combination of $(1, 0, 0)$ and $(0, 1, 0)$.
+          \item Removing $(3, 5, 0)$ leaves a basis $\{(1, 0, 0), (0, 1, 0)\}$ for $W$.
+          \item Dimension of $W = 2$ (basis has 2 vectors).
+        \end{enumerate}
+      \item Using matrices:
+        \[
+          A =
+          \begin{bmatrix}
+            1 & 0 & 0 \\
+            0 & 1 & 0 \\
+            3 & 5 & 0
+          \end{bmatrix}.
+        \]
+        Row reduce:
+        \[
+          \begin{bmatrix}
+            1 & 0 & 0 \\
+            0 & 1 & 0 \\
+            0 & 0 & 0
+          \end{bmatrix}.
+        \]
+        The rank is 2 (2 non-zero rows), confirming $\dim(W) = 2$.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Example 1: Subspace of $\mathbb{R}^3$}
+Given vectors $(1, 0, 0)$, $(0, 1, 0)$, and $(3, 5, 0)$:
+\begin{itemize}
+  \item $(3, 5, 0) = 3(1, 0, 0) + 5(0, 1, 0)$, so it is dependent on the others.
+  \item Removing $(3, 5, 0)$ leaves a basis $\{(1, 0, 0), (0, 1, 0)\}$.
+  \item Dimension of the subspace is 2.
+\end{itemize}
+
+\textbf{Example 2: Rank of a Matrix}
+Matrix:
+\[
+  A =
+  \begin{bmatrix}
+    1 & 0 & 0 \\
+    0 & 1 & 0 \\
+    3 & 5 & 0
+  \end{bmatrix}.
+\]
+Row reduce:
+\[
+  \begin{bmatrix}
+    1 & 0 & 0 \\
+    0 & 1 & 0 \\
+    0 & 0 & 0
+  \end{bmatrix}.
+\]
+Rank = 2 (2 non-zero rows).
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Defined the dimension (rank) of a vector space as the number of elements in a basis.
+  \item Showed methods for computing dimension via basis construction or matrix row reduction.
+  \item Introduced the concept of matrix rank as the dimension of its row or column space.
+\end{itemize}
+
+Understanding dimension and rank is fundamental for analyzing vector spaces and matrices, bridging algebraic and geometric perspectives.
+
+\end{document}

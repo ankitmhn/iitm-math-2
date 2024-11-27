@@ -1,0 +1,107 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Finding Bases for Vector Spaces}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lec33.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Definition of Basis:}
+    \begin{itemize}
+      \item A basis for a vector space $V$ is a set of vectors that is:
+        \begin{enumerate}
+          \item \textbf{Linearly Independent:} The only linear combination of the vectors that results in the zero vector has all coefficients equal to zero.
+          \item \textbf{Spanning:} Any vector in $V$ can be expressed as a linear combination of the basis vectors.
+        \end{enumerate}
+    \end{itemize}
+
+  \item \textbf{Equivalent Conditions for a Basis:}
+    \begin{itemize}
+      \item A set $B$ is a basis if:
+        \begin{enumerate}
+          \item $B$ is linearly independent and spans $V$.
+          \item $B$ is a \textbf{maximal linearly independent set}, meaning adding any vector to $B$ makes it linearly dependent.
+          \item $B$ is a \textbf{minimal spanning set}, meaning removing any vector from $B$ causes it to no longer span $V$.
+        \end{enumerate}
+      \item Proof involves demonstrating how these conditions imply each other using properties of linear independence and span.
+    \end{itemize}
+
+  \item \textbf{Methods to Find a Basis:}
+    \begin{itemize}
+      \item \textbf{Appending Method:}
+        \begin{enumerate}
+          \item Start with an empty set.
+          \item Iteratively add vectors that are not in the span of the current set until the set spans $V$.
+          \item Ensure the intermediate sets remain linearly independent.
+        \end{enumerate}
+      \item \textbf{Deleting Method:}
+        \begin{enumerate}
+          \item Start with a spanning set (e.g., a set of many vectors).
+          \item Iteratively remove vectors that are linear combinations of others until no vector in the set can be expressed as a linear combination of the remaining vectors.
+        \end{enumerate}
+    \end{itemize}
+
+  \item \textbf{Examples:}
+    \begin{itemize}
+      \item \textbf{Example 1 (Appending in $\mathbb{R}^2$):}
+        \begin{itemize}
+          \item Start with $(1, 2)$. This spans a line in $\mathbb{R}^2$.
+          \item Add $(2, 3)$, which is not on the line. The set $\{(1, 2), (2, 3)\}$ spans $\mathbb{R}^2$ and is linearly independent, forming a basis.
+        \end{itemize}
+      \item \textbf{Example 2 (Deleting in $\mathbb{R}^3$):}
+        \begin{itemize}
+          \item Start with a spanning set $S = \{(1, 0, 0), (1, 2, 0), (1, 0, 3), (0, 4, 2)\}$.
+          \item Observe that $(0, 4, 2)$ is a linear combination of the others. Remove it.
+          \item Next, remove $(0, 2, 3)$, which is also a linear combination of the remaining vectors.
+          \item The resulting set $\{(1, 0, 0), (1, 2, 0), (1, 0, 3)\}$ is a basis for $\mathbb{R}^3$.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Key Observations:}
+    \begin{itemize}
+      \item The size of a basis for $V$ (the number of vectors in the basis) is constant, irrespective of the method used to find it.
+      \item For $\mathbb{R}^n$, the standard basis $\{e_1, e_2, \dots, e_n\}$ has size $n$.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Example 1: Appending Method in $\mathbb{R}^2$}
+Start with the empty set:
+\begin{itemize}
+  \item Add $(1, 2)$, which spans a line.
+  \item Add $(2, 3)$, which is not on the line spanned by $(1, 2)$. The set $\{(1, 2), (2, 3)\}$ spans $\mathbb{R}^2$ and is linearly independent.
+\end{itemize}
+
+\textbf{Example 2: Deleting Method in $\mathbb{R}^3$}
+Start with $S = \{(1, 0, 0), (1, 2, 0), (1, 0, 3), (0, 4, 2)\}$:
+\begin{itemize}
+  \item Remove $(0, 4, 2)$ since it is a linear combination of $(1, 0, 0)$, $(1, 2, 0)$, and $(1, 0, 3)$.
+  \item Remove $(0, 2, 3)$ since it is also a linear combination of the remaining vectors.
+  \item Resulting basis: $\{(1, 0, 0), (1, 2, 0), (1, 0, 3)\}$.
+\end{itemize}
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Defined equivalent conditions for a set to be a basis.
+  \item Explained the appending and deleting methods for finding a basis.
+  \item Provided examples in $\mathbb{R}^2$ and $\mathbb{R}^3$ to illustrate the process.
+\end{itemize}
+
+The basis of a vector space is a fundamental concept in linear algebra, providing an optimal representation for spanning the space.
+
+\end{document}

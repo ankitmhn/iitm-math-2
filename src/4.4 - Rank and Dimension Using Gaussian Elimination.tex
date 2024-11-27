@@ -1,0 +1,154 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Rank and Dimension Using Gaussian Elimination}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lec35.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Overview:}
+    \begin{itemize}
+      \item Gaussian elimination can be used to compute the rank and dimension of a vector space or subspace and to find a basis.
+      \item This process is systematic and avoids ad-hoc methods, providing a clear algorithmic approach.
+    \end{itemize}
+
+  \item \textbf{Row Method:}
+    \begin{itemize}
+      \item \textbf{Steps:}
+        \begin{enumerate}
+          \item Arrange the spanning set vectors as rows of a matrix.
+          \item Perform row reduction to bring the matrix to row echelon form.
+          \item Count the number of non-zero rows:
+            \begin{itemize}
+              \item This is the dimension of the subspace.
+              \item The non-zero rows form a basis for the subspace.
+            \end{itemize}
+        \end{enumerate}
+      \item \textbf{Example: Subspace $W$ in $\mathbb{R}^3$ spanned by $\{(1, 0, 1), (-2, -3, 1), (3, 3, 0)\}$:}
+        \begin{enumerate}
+          \item Matrix:
+            \[
+              \begin{bmatrix}
+                1 & 0 & 1 \\
+                -2 & -3 & 1 \\
+                3 & 3 & 0
+              \end{bmatrix}.
+            \]
+          \item Row reduction yields:
+            \[
+              \begin{bmatrix}
+                1 & 0 & 1 \\
+                0 & 1 & -1 \\
+                0 & 0 & 0
+              \end{bmatrix}.
+            \]
+          \item Dimension = 2 (two non-zero rows).
+          \item Basis: $\{(1, 0, 1), (0, 1, -1)\}$.
+        \end{enumerate}
+    \end{itemize}
+
+  \item \textbf{Column Method:}
+    \begin{itemize}
+      \item \textbf{Steps:}
+        \begin{enumerate}
+          \item Arrange the spanning set vectors as columns of a matrix.
+          \item Perform row reduction to row echelon form.
+          \item Identify pivot columns (columns with leading ones).
+          \item The original vectors corresponding to pivot columns form a basis.
+        \end{enumerate}
+      \item \textbf{Example: Subspace $W$ in $\mathbb{R}^3$ spanned by $\{(1, 0, 1), (-2, -3, 1), (3, 3, 0)\}$:}
+        \begin{enumerate}
+          \item Matrix:
+            \[
+              \begin{bmatrix}
+                1 & -2 & 3 \\
+                0 & -3 & 3 \\
+                1 & 1 & 0
+              \end{bmatrix}.
+            \]
+          \item Row reduction yields:
+            \[
+              \begin{bmatrix}
+                1 & -2 & 3 \\
+                0 & 1 & -1 \\
+                0 & 0 & 0
+              \end{bmatrix}.
+            \]
+          \item Pivot columns: 1 and 2.
+          \item Basis: $\{(1, 0, 1), (-2, -3, 1)\}$.
+        \end{enumerate}
+    \end{itemize}
+
+  \item \textbf{Comparison of Methods:}
+    \begin{itemize}
+      \item \textbf{Row Method:}
+        \begin{itemize}
+          \item Provides a basis directly from the rows of the row-reduced matrix.
+          \item The basis vectors may not belong to the original spanning set.
+        \end{itemize}
+      \item \textbf{Column Method:}
+        \begin{itemize}
+          \item Provides a basis directly from the original spanning set.
+          \item Useful when you need the basis to be composed of specific original vectors.
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Example 1: Row Method in $\mathbb{R}^4$}
+Given vectors $\{(1, -2, 0, 4), (3, 1, 1, 0), (-1, -5, -1, 8), (3, 8, 2, -12)\}$:
+\begin{itemize}
+  \item Row reduction:
+    \[
+      \begin{bmatrix}
+        1 & -2 & 0 & 4 \\
+        0 & 1 & -1 & 2 \\
+        0 & 0 & 0 & 0 \\
+        0 & 0 & 0 & 0
+      \end{bmatrix}.
+    \]
+  \item Dimension = 2.
+  \item Basis: $\{(1, -2, 0, 4), (0, 1, -1, 2)\}$.
+\end{itemize}
+
+\textbf{Example 2: Column Method in $\mathbb{R}^4$}
+Given the same vectors:
+\begin{itemize}
+  \item Column matrix:
+    \[
+      \begin{bmatrix}
+        1 & 3 & -1 & 3 \\
+        -2 & 1 & -5 & 8 \\
+        0 & 1 & 2 & -12 \\
+        4 & 0 & 8 & -12
+      \end{bmatrix}.
+    \]
+  \item Pivot columns: 1 and 2.
+  \item Basis: $\{(1, -2, 0, 4), (3, 1, 1, 0)\}$.
+\end{itemize}
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Explored two algorithmic methods for computing rank and dimension using Gaussian elimination.
+  \item Compared the row method (basis from row-reduced matrix rows) and the column method (basis from original spanning set vectors).
+  \item Highlighted examples in $\mathbb{R}^3$ and $\mathbb{R}^4$ to illustrate both methods.
+\end{itemize}
+
+Gaussian elimination provides a versatile approach for basis and dimension computation, adaptable to various applications.
+
+\end{document}

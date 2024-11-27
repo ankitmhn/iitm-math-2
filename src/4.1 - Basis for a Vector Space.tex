@@ -1,0 +1,127 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Basis for a Vector Space}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lec32.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Recap: Linear Dependence and Independence:}
+    \begin{itemize}
+      \item A set of vectors $v_1, v_2, \dots, v_n$ is \textbf{linearly dependent} if there exist scalars $a_1, a_2, \dots, a_n$, not all zero, such that:
+        \[
+          a_1 v_1 + a_2 v_2 + \dots + a_n v_n = 0.
+        \]
+      \item A set is \textbf{linearly independent} if the only solution to the above equation is $a_1 = a_2 = \dots = a_n = 0$.
+    \end{itemize}
+
+  \item \textbf{Span of a Set of Vectors:}
+    \begin{itemize}
+      \item The span of a set $S$ is the set of all finite linear combinations of vectors in $S$:
+        \[
+          \text{span}(S) = \left\{ \sum_{i=1}^n a_i v_i \mid a_i \in \mathbb{R}, v_i \in S \right\}.
+        \]
+      \item The span of a set is a subspace of the vector space.
+      \item Example: For $S = \{(1, 0)\}$ in $\mathbb{R}^2$, the span is the $x$-axis.
+    \end{itemize}
+
+  \item \textbf{Spanning Set:}
+    \begin{itemize}
+      \item A set $S$ is a \textbf{spanning set} for a vector space $V$ if $\text{span}(S) = V$.
+      \item Example: $\{(1, 0), (0, 1)\}$ is a spanning set for $\mathbb{R}^2$.
+    \end{itemize}
+
+  \item \textbf{Basis:}
+    \begin{itemize}
+      \item A \textbf{basis} for a vector space $V$ is a set of vectors that is:
+        \begin{enumerate}
+          \item \textbf{Spanning:} $\text{span}(B) = V$.
+          \item \textbf{Linearly Independent:} No vector in $B$ can be expressed as a linear combination of the others.
+        \end{enumerate}
+      \item A basis is the optimal middle ground between having enough vectors to span $V$ and avoiding redundancy by ensuring linear independence.
+    \end{itemize}
+
+  \item \textbf{Examples of a Basis:}
+    \begin{itemize}
+      \item The \textbf{standard basis} for $\mathbb{R}^n$ is:
+        \[
+          \epsilon = \{e_1, e_2, \dots, e_n\}, \quad e_i = (0, \dots, 0, 1, 0, \dots, 0),
+        \]
+        where 1 is in the $i$-th position.
+      \item Any vector $(x_1, x_2, \dots, x_n) \in \mathbb{R}^n$ can be written as:
+        \[
+          x_1 e_1 + x_2 e_2 + \dots + x_n e_n.
+        \]
+      \item Hence, $\epsilon$ is both spanning and linearly independent, making it a basis for $\mathbb{R}^n$.
+    \end{itemize}
+
+  \item \textbf{Constructing a Basis:}
+    \begin{itemize}
+      \item Start with an empty set and iteratively add vectors not in the span of the current set.
+      \item Example in $\mathbb{R}^3$:
+        \begin{enumerate}
+          \item Start with $S_0 = \emptyset$ (span is $\{(0, 0, 0)\}$).
+          \item Append $(0, 2, 1)$ to form $S_1$ (span is a line).
+          \item Append $(2, 2, 0)$ to form $S_2$ (span is a plane).
+          \item Append $(0, 0, 5)$ to form $S_3$ (span is all of $\mathbb{R}^3$).
+        \end{enumerate}
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Example 1: Basis for $\mathbb{R}^2$}
+\begin{itemize}
+  \item $\{(1, 0), (0, 1)\}$ is a basis since:
+    \begin{enumerate}
+      \item Any vector $(x, y) \in \mathbb{R}^2$ can be written as $x(1, 0) + y(0, 1)$.
+      \item The set is linearly independent since the only solution to:
+        \[
+          a(1, 0) + b(0, 1) = (0, 0)
+        \]
+        is $a = b = 0$.
+    \end{enumerate}
+\end{itemize}
+
+\textbf{Example 2: Basis for $\mathbb{R}^3$}
+\begin{itemize}
+  \item $\{(1, 0, 0), (0, 1, 0), (0, 0, 1)\}$ is the standard basis.
+  \item Any vector $(x, y, z) \in \mathbb{R}^3$ can be written as:
+    \[
+      x(1, 0, 0) + y(0, 1, 0) + z(0, 0, 1).
+    \]
+\end{itemize}
+
+\textbf{Example 3: Constructing a Basis in $\mathbb{R}^3$}
+Start with an empty set:
+\begin{itemize}
+  \item Add $(3, 0, 0)$ (span is $x$-axis).
+  \item Add $(2, 2, 1)$ (span is a plane).
+  \item Add $(1, 3, 3)$ (span is all of $\mathbb{R}^3$).
+\end{itemize}
+This results in a basis for $\mathbb{R}^3$.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Defined a basis as a linearly independent set that spans a vector space.
+  \item Explored examples and constructed bases for $\mathbb{R}^2$ and $\mathbb{R}^3$.
+  \item Highlighted the importance of the basis in understanding vector spaces and performing computations.
+\end{itemize}
+
+A basis provides a minimal and complete representation of a vector space, making it an essential concept in linear algebra.
+
+\end{document}
