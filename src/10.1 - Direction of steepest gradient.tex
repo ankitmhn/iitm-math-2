@@ -1,0 +1,100 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Direction of Steepest Ascent and Descent}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Week 11-Lec 01.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Motivation and Example:}
+    \begin{itemize}
+      \item The problem of determining how water flows down a hill is modeled by studying the direction in which altitude decreases most rapidly.
+      \item In one dimension, the direction of steepest descent is determined by the sign of the derivative of the altitude function $h(x)$.
+      \item Example: A cross-section of the Deccan Plateau illustrates water flowing towards regions of lower altitude based on the slope.
+    \end{itemize}
+
+  \item \textbf{From One Dimension to Two Dimensions:}
+    \begin{itemize}
+      \item In two dimensions, altitude is modeled using $h(x, y)$.
+      \item The rate of change in any direction is described using the \textbf{directional derivative}.
+      \item The direction of steepest descent corresponds to minimizing the directional derivative, while steepest ascent maximizes it.
+    \end{itemize}
+
+  \item \textbf{Directional Derivative and Gradient:}
+    \begin{itemize}
+      \item The directional derivative of $f$ at $\vec{a}$ in the direction of a unit vector $\vec{u}$ is:
+        \[
+          D_{\vec{u}} f(\vec{a}) = \nabla f(\vec{a}) \cdot \vec{u} = \|\nabla f(\vec{a})\| \cos(\theta),
+        \]
+        where $\theta$ is the angle between $\nabla f(\vec{a})$ and $\vec{u}$.
+      \item \textbf{Steepest Ascent:} Occurs when $\cos(\theta) = 1$, i.e., $\vec{u}$ is in the same direction as $\nabla f(\vec{a})$.
+      \item \textbf{Steepest Descent:} Occurs when $\cos(\theta) = -1$, i.e., $\vec{u}$ is in the opposite direction to $\nabla f(\vec{a})$.
+      \item \textbf{No Change:} Occurs when $\cos(\theta) = 0$, i.e., $\vec{u}$ is orthogonal to $\nabla f(\vec{a})$.
+    \end{itemize}
+
+  \item \textbf{Examples:}
+    \begin{itemize}
+      \item Example 1: For $f(x, y) = \sin(xy)$ at $(\pi, 1)$:
+        \begin{itemize}
+          \item Gradient: $\nabla f(\pi, 1) = (-1, -\pi)$.
+          \item Steepest ascent: Direction is $-\nabla f/\|\nabla f\| = (1/\sqrt{1+\pi^2}, \pi/\sqrt{1+\pi^2})$.
+          \item Steepest descent: Direction is $-\nabla f(\pi, 1) = (-1, -\pi)/\sqrt{1+\pi^2}$.
+          \item No change: Perpendicular directions such as $(\pi, -1)$ or $(-\pi, 1)$.
+        \end{itemize}
+      \item Example 2: For $f(x, y, z) = x^2 + y^2 + z^2$ at $(1, 1, 1)$:
+        \begin{itemize}
+          \item Gradient: $\nabla f(1, 1, 1) = (2, 2, 2)$.
+          \item Steepest ascent: Direction is $\nabla f/\|\nabla f\| = (2/\sqrt{12}, 2/\sqrt{12}, 2/\sqrt{12})$.
+          \item Steepest descent: Opposite to the gradient.
+          \item No change: Perpendicular directions such as $(1, -1, 0)$ or $(1/\sqrt{2}, -1/\sqrt{2}, 0)$.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Continuity of Gradient:}
+    \begin{itemize}
+      \item The gradient must be continuous in a neighborhood around the point of interest for these results to hold.
+      \item If the gradient is not continuous, the directional derivatives may not exist in certain directions, and the results cannot be applied.
+    \end{itemize}
+
+  \item \textbf{Application in Machine Learning:}
+    \begin{itemize}
+      \item Gradient Descent: An optimization technique that iteratively moves in the direction of steepest descent to minimize a function.
+      \item This method is widely used in training machine learning models.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Steepest Ascent/Descent:}
+The gradient $\nabla f$ points in the direction of steepest ascent, while $-\nabla f$ points in the direction of steepest descent.
+
+\textbf{Example:}
+For $f(x, y) = \sin(xy)$ at $(\pi, 1)$:
+- Gradient: $(-1, -\pi)$.
+- Steepest ascent: $(1/\sqrt{1+\pi^2}, \pi/\sqrt{1+\pi^2})$.
+- Steepest descent: Opposite direction to ascent.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Analyzed steepest ascent, descent, and directions of no change using the gradient.
+  \item Applied these concepts to practical examples.
+  \item Highlighted their significance in optimization and machine learning.
+\end{itemize}
+
+Understanding steepest ascent/descent and their relation to gradients is foundational for optimization in mathematics and applied sciences.
+
+\end{document}

@@ -1,0 +1,129 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Tangents for Scalar-Valued Multivariable Functions}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Week 11 - Lec 02.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Tangents in One Variable:}
+    \begin{itemize}
+      \item In single-variable calculus, the tangent line to a curve $C$ at a point $P$ represents the instantaneous direction of the curve at $P$.
+      \item The equation of the tangent line is given by:
+        \[
+          y - f(a) = f'(a)(x - a),
+        \]
+        where $f'(a)$ is the derivative of $f$ at $a$.
+    \end{itemize}
+
+  \item \textbf{Extension to Multivariable Functions:}
+    \begin{itemize}
+      \item For a scalar-valued multivariable function $f: D \subset \mathbb{R}^n \to \mathbb{R}$, the tangent line is generalized using directional derivatives.
+      \item Directional derivatives compute the rate of change of $f$ along a given direction, forming the slope of the tangent line in that direction.
+    \end{itemize}
+
+  \item \textbf{Tangents in Two Dimensions:}
+    \begin{itemize}
+      \item Consider $f(x, y)$ defined on $D \subset \mathbb{R}^2$. At $(a, b)$, take a line $L$ in the direction of a unit vector $\vec{u} = (u_1, u_2)$.
+      \item Restrict $f$ to $L$ and compute the directional derivative $f_u(a, b)$, which is the slope of the tangent line.
+      \item The tangent line passing through $(a, b, f(a, b))$ is given parametrically by:
+        \[
+          \begin{aligned}
+            x(t) &= a + t u_1, \\
+            y(t) &= b + t u_2, \\
+            z(t) &= f(a, b) + t f_u(a, b).
+          \end{aligned}
+        \]
+      \item Alternatively, in vector form:
+        \[
+          (x(t), y(t), z(t)) = (a, b, f(a, b)) + t(u_1, u_2, f_u(a, b)).
+        \]
+    \end{itemize}
+
+  \item \textbf{Tangents in Higher Dimensions:}
+    \begin{itemize}
+      \item For $f: \mathbb{R}^n \to \mathbb{R}$, consider a line through $\vec{a} \in \mathbb{R}^n$ in the direction of $\vec{u} = (u_1, u_2, \dots, u_n)$.
+      \item Parametric equations of the tangent line:
+        \[
+          x_i(t) = a_i + t u_i, \quad z(t) = f(\vec{a}) + t f_u(\vec{a}),
+        \]
+        where $f_u(\vec{a}) = \nabla f(\vec{a}) \cdot \vec{u}$.
+    \end{itemize}
+
+  \item \textbf{Examples:}
+    \begin{itemize}
+      \item \textbf{Example 1:} $f(x, y) = x + y$ at $(1, 1)$ in the direction of $(1, 0)$:
+        \[
+          \nabla f = (1, 1), \quad f_u(1, 1) = 1.
+        \]
+        Parametric form:
+        \[
+          x(t) = 1 + t, \quad y(t) = 1, \quad z(t) = 2 + t.
+        \]
+      \item \textbf{Example 2:} $f(x, y) = xy$ at $(1, 1)$ in the direction of $(3, 4)$:
+        \[
+          \vec{u} = \left(\frac{3}{5}, \frac{4}{5}\right), \quad \nabla f = (y, x), \quad f_u(1, 1) = \frac{7}{5}.
+        \]
+        Parametric form:
+        \[
+          x(t) = 1 + \frac{3t}{5}, \quad y(t) = 1 + \frac{4t}{5}, \quad z(t) = 1 + \frac{7t}{5}.
+        \]
+    \end{itemize}
+
+  \item \textbf{When Tangents Fail to Exist:}
+    \begin{itemize}
+      \item Tangents may not exist if the gradient is not continuous at the point of interest.
+      \item Examples include piecewise-defined functions with discontinuities or corners, such as $f(x, y) = |x| + |y|$.
+    \end{itemize}
+
+  \item \textbf{General Conditions for Tangents:}
+    \begin{itemize}
+      \item If $\nabla f$ exists and is continuous in an open neighborhood of $\vec{a}$, then:
+        \[
+          f_u(\vec{a}) = \nabla f(\vec{a}) \cdot \vec{u},
+        \]
+        ensuring the existence of tangents in all directions at $\vec{a}$.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Tangents in Multivariable Functions:}
+Generalize the concept of tangent lines from single-variable calculus using directional derivatives.
+
+\textbf{Parametric Form:}
+The tangent line to $f(x, y)$ at $(a, b)$ in the direction of $\vec{u}$ is:
+\[
+  x(t) = a + t u_1, \quad y(t) = b + t u_2, \quad z(t) = f(a, b) + t f_u(a, b).
+\]
+
+\textbf{Example:}
+For $f(x, y) = x + y$ at $(1, 1)$ in the direction of $(1, 0)$:
+\[
+  x(t) = 1 + t, \quad y(t) = 1, \quad z(t) = 2 + t.
+\]
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Extended the concept of tangents from single-variable to multivariable functions.
+  \item Explored examples and derived parametric equations for tangent lines.
+  \item Discussed conditions under which tangents exist.
+\end{itemize}
+
+Understanding tangents in multivariable calculus is essential for geometric and analytic interpretations of scalar fields.
+
+\end{document}

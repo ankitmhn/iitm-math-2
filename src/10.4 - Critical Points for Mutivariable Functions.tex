@@ -1,0 +1,137 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Critical Points for Multivariable Functions}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Week 11 Lec 04.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Critical Points for Single-Variable Functions (Recap):}
+    \begin{itemize}
+      \item A point $a$ is a critical point of $f(x)$ if either:
+        \[
+          f'(a) = 0 \quad \text{or} \quad f'(a) \text{ does not exist}.
+        \]
+      \item Critical points include:
+        \begin{itemize}
+          \item Local maxima: $\frac{d^2f}{dx^2}(a) < 0$.
+          \item Local minima: $\frac{d^2f}{dx^2}(a) > 0$.
+          \item Saddle points: Neither maxima nor minima.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Extension to Multivariable Functions:}
+    \begin{itemize}
+      \item For $f: \mathbb{R}^n \to \mathbb{R}$, a point $\vec{a}$ is a critical point if:
+        \[
+          \nabla f(\vec{a}) = 0 \quad \text{or} \quad \nabla f(\vec{a}) \text{ does not exist}.
+        \]
+      \item Critical points can be:
+        \begin{itemize}
+          \item Local maxima: $f(\vec{x}) \leq f(\vec{a})$ in a neighborhood of $\vec{a}$.
+          \item Local minima: $f(\vec{x}) \geq f(\vec{a})$ in a neighborhood of $\vec{a}$.
+          \item Saddle points: Not local extrema.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Examples:}
+    \begin{itemize}
+      \item \textbf{Example 1:} $f(x, y) = \sin(xy)$:
+        \begin{itemize}
+          \item Gradient $\nabla f = (y\cos(xy), x\cos(xy))$.
+          \item Setting $\nabla f = 0$ gives critical points:
+            \[
+              x = 0 \quad \text{or} \quad y = 0 \quad \text{or} \quad \cos(xy) = 0.
+            \]
+          \item $\cos(xy) = 0$ yields infinitely many critical points.
+        \end{itemize}
+
+      \item \textbf{Example 2:} $f(x, y) = x^2 + 6xy + 4y^2 - 2x - 4y$:
+        \begin{itemize}
+          \item Gradient $\nabla f = (2x + 6y + 2, 6x + 8y - 4)$.
+          \item Solving $\nabla f = 0$ gives $x = 2$ and $y = -1$ as the critical point.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Saddle Points:}
+    \begin{itemize}
+      \item A critical point $\vec{a}$ is a saddle point if:
+        \[
+          \nabla f(\vec{a}) = 0 \quad \text{but} \quad \vec{a} \text{ is not a local extremum}.
+        \]
+      \item Example: $f(x, y) = x^2 - y^2$:
+        \begin{itemize}
+          \item At $(0, 0)$, $\nabla f = 0$, but $f$ is a maximum in some directions and a minimum in others.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Global Extrema:}
+    \begin{itemize}
+      \item A point $\vec{a}$ is a global maximum if:
+        \[
+          f(\vec{a}) \geq f(\vec{x}) \quad \text{for all } \vec{x} \in D.
+        \]
+      \item A point $\vec{a}$ is a global minimum if:
+        \[
+          f(\vec{a}) \leq f(\vec{x}) \quad \text{for all } \vec{x} \in D.
+        \]
+      \item For continuous functions on closed and bounded domains, global extrema always exist.
+    \end{itemize}
+
+  \item \textbf{Finding Global Extrema:}
+    \begin{itemize}
+      \item Check critical points within the domain.
+      \item Evaluate $f$ on the boundary and reduce dimensions iteratively.
+      \item Compare $f$ values at all critical points and boundaries to determine global extrema.
+    \end{itemize}
+
+  \item \textbf{Example of Global Extrema:}
+    \begin{itemize}
+      \item Function: $f(x, y) = x^3 + y^3 - 3x - 3y^2 + 1$ on a square domain.
+      \item Steps:
+        \begin{enumerate}
+          \item Find critical points inside the domain: $(1, 0)$ and $(1, 2)$.
+          \item Evaluate $f$ on the edges and corners of the square.
+          \item Compare all values to determine:
+            \[
+              \text{Absolute Maximum: } f(2, 0) = 3, \quad \text{Absolute Minimum: } f(1, 2) = -5.
+            \]
+        \end{enumerate}
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Critical Points:}
+Points where the gradient is zero or undefined. These include potential maxima, minima, or saddle points.
+
+\textbf{Example:}
+For $f(x, y) = x^2 + 6xy + 4y^2 - 2x - 4y$, solving $\nabla f = 0$ yields $(2, -1)$ as a critical point.
+
+\textbf{Global Extrema:}
+To find the largest or smallest value of $f$ over a domain, check critical points and boundary values.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Defined critical points and explored their significance in multivariable functions.
+  \item Distinguished between local extrema, saddle points, and global extrema.
+  \item Demonstrated techniques to find global extrema on closed domains.
+\end{itemize}
+
+Critical points and extrema are fundamental concepts in optimization and analysis of multivariable functions.
+
+\end{document}
