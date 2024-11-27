@@ -1,0 +1,228 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Examples of Finding Bases for Kernel and Image of Linear Transformations}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lec43.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Review of Kernel and Image:}
+    \begin{itemize}
+      \item The kernel $\ker(f)$ of a linear transformation $f: V \to W$ is:
+        \[
+          \ker(f) = \{v \in V \mid f(v) = 0\}.
+        \]
+      \item The image $\operatorname{Im}(f)$ is:
+        \[
+          \operatorname{Im}(f) = \{w \in W \mid \exists v \in V, \, w = f(v)\}.
+        \]
+      \item The kernel corresponds to the null space of the associated matrix, and the image corresponds to the column space.
+    \end{itemize}
+
+  \item \textbf{Finding Bases Using Row Reduction:}
+    \begin{itemize}
+      \item Row reduce the matrix representation of $f$ to obtain:
+        \begin{enumerate}
+          \item Basis for the null space (kernel) using the non-pivot columns.
+          \item Basis for the column space (image) using the pivot columns.
+        \end{enumerate}
+    \end{itemize}
+
+  \item \textbf{Example 1: Transformation from $\mathbb{R}^4$ to $\mathbb{R}^3$:}
+    \begin{itemize}
+      \item Transformation defined by:
+        \[
+          T(x_1, x_2, x_3, x_4) =
+          \begin{bmatrix}
+            2x_1 + 4x_2 + 6x_3 + 8x_4 \\
+            x_1 + 3x_2 + 5x_4 \\
+            x_1 + x_2 + 6x_3 + 3x_4
+          \end{bmatrix}.
+        \]
+      \item Matrix representation:
+        \[
+          A =
+          \begin{bmatrix}
+            2 & 4 & 6 & 8 \\
+            1 & 3 & 0 & 5 \\
+            1 & 1 & 6 & 3
+          \end{bmatrix}.
+        \]
+      \item Row reduce $A$:
+        \[
+          \begin{bmatrix}
+            1 & 0 & 9 & 2 \\
+            0 & 1 & -3 & 1 \\
+            0 & 0 & 0 & 0
+          \end{bmatrix}.
+        \]
+      \item Kernel basis:
+        \begin{itemize}
+          \item Non-pivot columns: $x_3, x_4$ are independent variables.
+          \item Solve for $x_1, x_2$:
+            \[
+              x_1 = -9x_3 - 2x_4, \quad x_2 = 3x_3 - x_4.
+            \]
+          \item Basis vectors:
+            \[
+              (-9, 3, 1, 0), \quad (-2, -1, 0, 1).
+            \]
+        \end{itemize}
+      \item Image basis:
+        \begin{itemize}
+          \item Pivot columns: 1 and 2.
+          \item Basis vectors from original matrix:
+            \[
+              (2, 1, 1), \quad (4, 3, 1).
+            \]
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Example 2: Transformation from $\mathbb{R}^2$ to $\mathbb{R}^3$:}
+    \begin{itemize}
+      \item Transformation defined by:
+        \[
+          T(x, y) =
+          \begin{bmatrix}
+            0 \\
+            x + 2y \\
+            -x - 2y
+          \end{bmatrix}.
+        \]
+      \item Basis $\beta = \{(1, 1), (1, -1)\}$ for $\mathbb{R}^2$, $\gamma = \{(-1, 1, 0), (-1, 0, 1)\}$ for $\mathbb{R}^3$.
+      \item Compute $T(1, 1)$:
+        \[
+          T(1, 1) =
+          \begin{bmatrix}
+            0 \\
+            3 \\
+            -3
+          \end{bmatrix} = 3(-1, 1, 0) + (-3)(-1, 0, 1).
+        \]
+      \item Compute $T(1, -1)$:
+        \[
+          T(1, -1) =
+          \begin{bmatrix}
+            0 \\
+            -1 \\
+            1
+          \end{bmatrix} = -1(-1, 1, 0) + 1(-1, 0, 1).
+        \]
+      \item Matrix representation:
+        \[
+          A =
+          \begin{bmatrix}
+            3 & -1 \\
+            -3 & 1
+          \end{bmatrix}.
+        \]
+      \item Row reduce $A$:
+        \[
+          \begin{bmatrix}
+            1 & -\frac{1}{3} \\
+            0 & 0
+          \end{bmatrix}.
+        \]
+      \item Kernel basis:
+        \[
+          \left(\frac{1}{3}, 1\right).
+        \]
+      \item Image basis:
+        \[
+          \{(-1, 1, 0)\}.
+        \]
+    \end{itemize}
+
+  \item \textbf{Rank-Nullity Theorem for Linear Transformations:}
+    \begin{itemize}
+      \item Rank of $T$ = dimension of image.
+      \item Nullity of $T$ = dimension of kernel.
+      \item Rank-nullity theorem:
+        \[
+          \text{rank}(T) + \text{nullity}(T) = \dim(V).
+        \]
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Example 1: Basis for Kernel and Image}
+Matrix:
+\[
+  A =
+  \begin{bmatrix}
+    2 & 4 & 6 & 8 \\
+    1 & 3 & 0 & 5 \\
+    1 & 1 & 6 & 3
+  \end{bmatrix}.
+\]
+\begin{itemize}
+  \item Row reduce to:
+    \[
+      \begin{bmatrix}
+        1 & 0 & 9 & 2 \\
+        0 & 1 & -3 & 1 \\
+        0 & 0 & 0 & 0
+      \end{bmatrix}.
+    \]
+  \item Kernel basis:
+    \[
+      (-9, 3, 1, 0), \quad (-2, -1, 0, 1).
+    \]
+  \item Image basis:
+    \[
+      (2, 1, 1), \quad (4, 3, 1).
+    \]
+\end{itemize}
+
+\textbf{Example 2: Custom Basis}
+Matrix:
+\[
+  A =
+  \begin{bmatrix}
+    3 & -1 \\
+    -3 & 1
+  \end{bmatrix}.
+\]
+\begin{itemize}
+  \item Row reduce to:
+    \[
+      \begin{bmatrix}
+        1 & -\frac{1}{3} \\
+        0 & 0
+      \end{bmatrix}.
+    \]
+  \item Kernel basis:
+    \[
+      \left(\frac{1}{3}, 1\right).
+    \]
+  \item Image basis:
+    \[
+      \{(-1, 1, 0)\}.
+    \]
+\end{itemize}
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Demonstrated the computation of kernel and image bases for linear transformations.
+  \item Illustrated the use of row reduction to find these bases.
+  \item Revisited the rank-nullity theorem in the context of linear transformations.
+\end{itemize}
+
+These examples reinforce the practical application of kernel and image concepts in linear algebra.
+
+\end{document}

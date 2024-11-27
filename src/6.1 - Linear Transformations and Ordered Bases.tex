@@ -1,0 +1,124 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Linear Transformations and Ordered Bases}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lec41.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Linear Transformations: Recap and Basis Dependency:}
+    \begin{itemize}
+      \item A linear transformation $f: V \to W$ satisfies:
+        \[
+          f(u + v) = f(u) + f(v), \quad f(c \cdot u) = c \cdot f(u),
+        \]
+        for $u, v \in V$ and scalar $c \in \mathbb{R}$.
+      \item The action of $f$ is fully determined by its values on the basis vectors of $V$.
+    \end{itemize}
+
+  \item \textbf{Isomorphism Using Basis:}
+    \begin{itemize}
+      \item If $V$ is an $n$-dimensional vector space with basis $\{v_1, v_2, \dots, v_n\}$:
+        \begin{enumerate}
+          \item Define $f(v_i) = e_i$ (the standard basis for $\mathbb{R}^n$).
+          \item Extend this mapping linearly to $V$ by:
+            \[
+              f\left(\sum_{i=1}^n c_i v_i\right) = \sum_{i=1}^n c_i e_i.
+            \]
+        \end{enumerate}
+      \item $f$ is an isomorphism, meaning it is both one-to-one and onto.
+    \end{itemize}
+
+  \item \textbf{Matrix Representation of Linear Transformations:}
+    \begin{itemize}
+      \item For $f: V \to W$, let $\beta = \{v_1, v_2, \dots, v_n\}$ be an ordered basis for $V$ and $\gamma = \{w_1, w_2, \dots, w_m\}$ for $W$.
+      \item Represent $f(v_j)$ as a linear combination of $\{w_1, w_2, \dots, w_m\}$:
+        \[
+          f(v_j) = \sum_{i=1}^m a_{ij} w_i.
+        \]
+      \item The coefficients $a_{ij}$ form the $i$th row and $j$th column of the matrix representation of $f$.
+    \end{itemize}
+
+  \item \textbf{Example: Linear Transformation on $\mathbb{R}^2$:}
+    \begin{itemize}
+      \item Define $f(x, y) = (2x, y)$.
+      \item With standard basis $\{(1, 0), (0, 1)\}$, compute:
+        \[
+          f(1, 0) = (2, 0), \quad f(0, 1) = (0, 1).
+        \]
+      \item Matrix representation:
+        \[
+          A =
+          \begin{bmatrix}
+            2 & 0 \\
+            0 & 1
+          \end{bmatrix}.
+        \]
+    \end{itemize}
+
+  \item \textbf{Changing Ordered Basis:}
+    \begin{itemize}
+      \item Changing the basis changes the matrix representation.
+      \item Example: If $\beta = \{(1, 0), (1, 1)\}$, then:
+        \[
+          f(1, 0) = (2, 0), \quad f(1, 1) = (2, 1).
+        \]
+      \item Matrix representation becomes:
+        \[
+          A =
+          \begin{bmatrix}
+            2 & 1 \\
+            0 & 1
+          \end{bmatrix}.
+        \]
+      \item The same linear transformation yields different matrices for different bases.
+    \end{itemize}
+
+  \item \textbf{Bijection Between Linear Transformations and Matrices:}
+    \begin{itemize}
+      \item For fixed ordered bases $\beta$ and $\gamma$, there is a bijection between linear transformations $f: V \to W$ and $m \times n$ matrices.
+      \item The matrix $A$ encodes the coefficients of $f(v_j)$ expressed in terms of $\gamma$.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Example 1: Linear Transformation on $\mathbb{R}^3$}
+Let $W = \{(x, y, z) \in \mathbb{R}^3 \mid x + y + z = 0\}$ and $V = \mathbb{R}^2$:
+\begin{itemize}
+  \item Basis for $W$: $\{(-1, 1, 0), (-1, 0, 1)\}$.
+  \item Define $f(-1, 1, 0) = (1, 0)$, $f(-1, 0, 1) = (0, 1)$.
+  \item Matrix representation (standard basis for $V$):
+    \[
+      A =
+      \begin{bmatrix}
+        1 & 0 \\
+        0 & 1
+      \end{bmatrix}.
+    \]
+\end{itemize}
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Explored linear transformations and their dependency on ordered bases.
+  \item Developed matrix representations and analyzed their changes with basis choice.
+  \item Highlighted the bijection between linear transformations and matrices for fixed bases.
+\end{itemize}
+
+This framework unifies the concepts of linear algebra, emphasizing the interplay between transformations, bases, and matrix representations.
+
+\end{document}
