@@ -1,0 +1,133 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Null Space, Nullity, and Basis}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lec36.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Definition of Null Space:}
+    \begin{itemize}
+      \item Let $A$ be an $m \times n$ matrix. The \textbf{null space} of $A$ is defined as:
+        \[
+          \text{Null}(A) = \{x \in \mathbb{R}^n \mid Ax = 0\}.
+        \]
+      \item It represents the solution space of the homogeneous system $Ax = 0$.
+      \item Null space is a subspace of $\mathbb{R}^n$.
+    \end{itemize}
+
+  \item \textbf{Nullity:}
+    \begin{itemize}
+      \item The \textbf{nullity} of $A$ is the dimension of the null space of $A$.
+      \item Denoted as $\text{nullity}(A)$, it measures the number of independent solutions to $Ax = 0$.
+    \end{itemize}
+
+  \item \textbf{Subspace Verification:}
+    \begin{itemize}
+      \item To confirm that the null space is a subspace:
+        \begin{enumerate}
+          \item If $x, y \in \text{Null}(A)$, then $x + y \in \text{Null}(A)$ (closure under addition).
+          \item If $x \in \text{Null}(A)$ and $\lambda \in \mathbb{R}$, then $\lambda x \in \text{Null}(A)$ (closure under scalar multiplication).
+        \end{enumerate}
+    \end{itemize}
+
+  \item \textbf{Finding the Basis for the Null Space:}
+    \begin{itemize}
+      \item Use Gaussian elimination to row reduce $A$.
+      \item Identify independent and dependent variables:
+        \begin{enumerate}
+          \item Columns with leading 1s correspond to dependent variables.
+          \item Other columns correspond to independent variables.
+        \end{enumerate}
+      \item Assign parameters (e.g., $t_1, t_2$) to independent variables.
+      \item Solve for dependent variables in terms of the independent variables.
+      \item Substitute values for one parameter at a time (e.g., $t_i = 1$, all others = 0) to construct basis vectors.
+    \end{itemize}
+
+  \item \textbf{Rank-Nullity Theorem:}
+    \begin{itemize}
+      \item The rank-nullity theorem states:
+        \[
+          \text{rank}(A) + \text{nullity}(A) = n,
+        \]
+        where $n$ is the number of columns of $A$.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Example: Null Space and Basis in $\mathbb{R}^3$}
+Given:
+\[
+  A =
+  \begin{bmatrix}
+    1 & 1 & 1 \\
+    2 & 2 & 2 \\
+    3 & 3 & 3
+  \end{bmatrix}.
+\]
+Steps:
+\begin{enumerate}
+  \item Augmented matrix:
+    \[
+      [A | 0] =
+      \begin{bmatrix}
+        1 & 1 & 1 & 0 \\
+        2 & 2 & 2 & 0 \\
+        3 & 3 & 3 & 0
+      \end{bmatrix}.
+    \]
+  \item Row reduce:
+    \[
+      \begin{bmatrix}
+        1 & 1 & 1 & 0 \\
+        0 & 0 & 0 & 0 \\
+        0 & 0 & 0 & 0
+      \end{bmatrix}.
+    \]
+  \item Identify variables:
+    \begin{itemize}
+      \item $x_1$ is dependent.
+      \item $x_2, x_3$ are independent.
+    \end{itemize}
+  \item Solve: $x_1 = -x_2 - x_3$.
+  \item Basis for null space:
+    \[
+      \{(-1, 1, 0), (-1, 0, 1)\}.
+    \]
+\end{enumerate}
+
+\textbf{Example 2: Applying the Rank-Nullity Theorem}
+\begin{itemize}
+  \item $A$ has 3 columns.
+  \item Row-reduced matrix has 1 non-zero row $\Rightarrow \text{rank}(A) = 1$.
+  \item Nullity:
+    \[
+      \text{nullity}(A) = 3 - 1 = 2.
+    \]
+\end{itemize}
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Defined the null space and nullity of a matrix.
+  \item Demonstrated how to find the basis and nullity using Gaussian elimination.
+  \item Applied the rank-nullity theorem to relate rank and nullity.
+\end{itemize}
+
+Null space analysis is critical in solving systems of equations and understanding the structure of matrices in linear algebra.
+
+\end{document}

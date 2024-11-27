@@ -1,0 +1,123 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Linear Transformations and Basis Dependency}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lec40.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{What is a Linear Transformation?}
+    \begin{itemize}
+      \item A \textbf{linear transformation} is a generalization of a linear mapping for arbitrary vector spaces $V$ and $W$.
+      \item A function $f: V \to W$ is a linear transformation if:
+        \[
+          f(u + v) = f(u) + f(v), \quad f(c \cdot u) = c \cdot f(u),
+        \]
+        for all $u, v \in V$ and scalars $c \in \mathbb{R}$.
+      \item This definition is equivalent to the property of linearity.
+    \end{itemize}
+
+  \item \textbf{Examples of Linear Transformations:}
+    \begin{itemize}
+      \item Linear mappings such as cost functions and matrix-vector multiplications are examples of linear transformations.
+      \item Projections, rotations, and scaling in vector spaces are also linear transformations.
+    \end{itemize}
+
+  \item \textbf{One-to-One (Injective) and Onto (Surjective) Transformations:}
+    \begin{itemize}
+      \item A transformation $f: V \to W$ is \textbf{injective} if:
+        \[
+          f(v_1) = f(v_2) \implies v_1 = v_2.
+        \]
+      \item A transformation $f: V \to W$ is \textbf{surjective} if:
+        \[
+          \forall w \in W, \, \exists v \in V \, \text{such that } f(v) = w.
+        \]
+      \item Injectivity ensures no two distinct vectors in $V$ map to the same vector in $W$, while surjectivity ensures the entire range of $W$ is covered.
+    \end{itemize}
+
+  \item \textbf{Isomorphisms:}
+    \begin{itemize}
+      \item A linear transformation is an \textbf{isomorphism} if it is both injective and surjective.
+      \item Example: The identity mapping $f(x) = x$ for $x \in \mathbb{R}^n$ is an isomorphism.
+      \item Example of non-isomorphism:
+        \[
+          f(x, y) = (2x, 0) \quad \text{is injective but not surjective.}
+        \]
+    \end{itemize}
+
+  \item \textbf{Role of Basis in Linear Transformations:}
+    \begin{itemize}
+      \item A basis for $V$ uniquely determines the action of a linear transformation $f: V \to W$.
+      \item If $\{v_1, v_2, \dots, v_n\}$ is a basis for $V$, then $f$ is fully determined by the values $f(v_1), f(v_2), \dots, f(v_n)$.
+      \item Changing the basis of $V$ results in a different linear transformation.
+    \end{itemize}
+
+  \item \textbf{Matrix Representation of Linear Transformations:}
+    \begin{itemize}
+      \item A linear transformation can be represented as a matrix $A$:
+        \[
+          f(x) = A \cdot x,
+        \]
+        where $x$ is the input vector and $A$ encodes the transformation.
+      \item Different bases lead to different matrix representations.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Example 1: Linear Transformation Defined by Basis Values}
+Let $f: \mathbb{R}^2 \to \mathbb{R}^2$ be defined by:
+\[
+  f(1, 0) = (2, 0), \quad f(0, 1) = (0, 1).
+\]
+\begin{itemize}
+  \item For any $(x, y) \in \mathbb{R}^2$, write it as:
+    \[
+      (x, y) = x(1, 0) + y(0, 1).
+    \]
+  \item The transformation is:
+    \[
+      f(x, y) = x \cdot f(1, 0) + y \cdot f(0, 1) = (2x, y).
+    \]
+\end{itemize}
+
+\textbf{Example 2: Changing the Basis}
+Using basis $\{(1, 0), (1, 1)\}$:
+\begin{itemize}
+  \item Represent $(x, y)$ as:
+    \[
+      (x, y) = a(1, 0) + b(1, 1),
+    \]
+    where $a = x - y, b = y$.
+  \item Transformation with new basis:
+    \[
+      f(x, y) = (2a, b) = (2(x - y), y).
+    \]
+\end{itemize}
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Defined linear transformations and explained their relationship with linear mappings.
+  \item Discussed injectivity, surjectivity, and isomorphisms.
+  \item Highlighted the role of basis in determining linear transformations and how changes in basis alter transformations.
+  \item Illustrated matrix representations of linear transformations and their basis dependency.
+\end{itemize}
+
+Linear transformations provide a framework for understanding linear relationships in any vector space, and basis choice is crucial for their representation and computation.
+
+\end{document}

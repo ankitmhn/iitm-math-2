@@ -1,0 +1,134 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Introduction to Linear Mappings – Part 1}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lec38.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Introduction to Linear Mappings:}
+    \begin{itemize}
+      \item A linear mapping represents a function that transforms inputs to outputs while preserving the properties of linear combinations.
+      \item Example: Computing the cost of goods in a grocery shop using quantities and prices as inputs.
+    \end{itemize}
+
+  \item \textbf{Example: Grocery Shop Cost Function:}
+    \begin{itemize}
+      \item Prices at Shop A:
+        \[
+          \text{Rice: } 45 \, \text{Rs/kg}, \, \text{Dal: } 125 \, \text{Rs/kg}, \, \text{Oil: } 150 \, \text{Rs/liter}.
+        \]
+      \item Cost for given quantities $x_1$ (rice), $x_2$ (dal), $x_3$ (oil):
+        \[
+          c_A(x_1, x_2, x_3) = 45x_1 + 125x_2 + 150x_3.
+        \]
+      \item This is a linear combination of $x_1, x_2, x_3$ with coefficients $45, 125, 150$.
+      \item Example computations:
+        \[
+          c_A(1, 2, 1) = 45 \cdot 1 + 125 \cdot 2 + 150 \cdot 1 = 445 \, \text{Rs}.
+        \]
+        \[
+          c_A(2, 1, 2) = 45 \cdot 2 + 125 \cdot 1 + 150 \cdot 2 = 515 \, \text{Rs}.
+        \]
+    \end{itemize}
+
+  \item \textbf{Generalization:}
+    \begin{itemize}
+      \item A cost function $c_A: \mathbb{R}^3 \to \mathbb{R}$ is defined as:
+        \[
+          c_A(x_1, x_2, x_3) = 45x_1 + 125x_2 + 150x_3.
+        \]
+      \item Inputs are represented as vectors:
+        \[
+          \begin{bmatrix}
+            x_1 \\
+            x_2 \\
+            x_3
+          \end{bmatrix},
+        \]
+        and the cost function is equivalent to a matrix-vector multiplication:
+        \[
+          c_A(x) =
+          \begin{bmatrix}
+            45 & 125 & 150
+          \end{bmatrix}
+          \begin{bmatrix}
+            x_1 \\
+            x_2 \\
+            x_3
+          \end{bmatrix}.
+        \]
+    \end{itemize}
+
+  \item \textbf{Properties of Linear Mappings:}
+    \begin{itemize}
+      \item Linearity ensures that combinations of inputs can be simplified:
+        \[
+          c_A(a \cdot x + b \cdot y) = a \cdot c_A(x) + b \cdot c_A(y).
+        \]
+      \item This property allows for simplified computations in real-world scenarios.
+    \end{itemize}
+
+  \item \textbf{Case Study: Caterer’s Orders:}
+    \begin{itemize}
+      \item Office 1 requires 20 kg rice, 10 kg dal, 4 liters oil:
+        \[
+          c_A(20, 10, 4) = 2750 \, \text{Rs}.
+        \]
+      \item Office 2 requires 30 kg rice, 12 kg dal, 2 liters oil:
+        \[
+          c_A(30, 12, 2) = 3150 \, \text{Rs}.
+        \]
+      \item For combined orders (Wednesday):
+        \[
+          c_A\left(\frac{1}{2}(20, 10, 4) + \frac{5}{4}(30, 12, 2)\right) = 5312.5 \, \text{Rs}.
+        \]
+      \item Linearity allows splitting computations into contributions from Monday and Tuesday orders.
+    \end{itemize}
+
+  \item \textbf{Key Observations:}
+    \begin{itemize}
+      \item A linear function can be interpreted as a combination of contributions weighted by inputs.
+      \item Linearity simplifies real-world calculations like those in commerce and logistics.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Example: Linear Cost Function}
+Prices: Rice = 45 Rs/kg, Dal = 125 Rs/kg, Oil = 150 Rs/liter.
+\begin{itemize}
+  \item For quantities $x_1 = 2$ (rice), $x_2 = 1$ (dal), $x_3 = 2$ (oil):
+    \[
+      c_A(x_1, x_2, x_3) = 45 \cdot 2 + 125 \cdot 1 + 150 \cdot 2 = 515 \, \text{Rs}.
+    \]
+  \item Combined inputs maintain the linearity:
+    \[
+      c_A\left(a \cdot x_1 + b \cdot x_2\right) = a \cdot c_A(x_1) + b \cdot c_A(x_2).
+    \]
+\end{itemize}
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Introduced linear mappings as functions preserving linear combinations.
+  \item Illustrated linearity through examples like cost functions and catering orders.
+  \item Highlighted the computational advantages of linearity in real-world scenarios.
+\end{itemize}
+
+This sets the foundation for exploring more advanced applications of linear mappings in data science and mathematics.
+
+\end{document}

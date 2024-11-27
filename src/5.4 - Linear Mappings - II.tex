@@ -1,0 +1,139 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Linear Mappings – Part 2}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lec39.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Review of Linear Mappings:}
+    \begin{itemize}
+      \item A linear mapping is a function $f: \mathbb{R}^n \to \mathbb{R}^m$ that satisfies:
+        \[
+          f(a \cdot x + b \cdot y) = a \cdot f(x) + b \cdot f(y),
+        \]
+        where $a, b \in \mathbb{R}$ and $x, y \in \mathbb{R}^n$.
+      \item Linear mappings preserve the operations of addition and scalar multiplication.
+    \end{itemize}
+
+  \item \textbf{Examples: Cost Functions in Multiple Shops:}
+    \begin{itemize}
+      \item Shop A prices:
+        \[
+          c_A(x_1, x_2, x_3) = 45x_1 + 125x_2 + 150x_3.
+        \]
+      \item Shop B prices:
+        \[
+          c_B(x_1, x_2, x_3) = 40x_1 + 120x_2 + 170x_3.
+        \]
+      \item Shop C prices:
+        \[
+          c_C(x_1, x_2, x_3) = 50x_1 + 130x_2 + 160x_3.
+        \]
+      \item These functions can be written in matrix form:
+        \[
+          c(x_1, x_2, x_3) =
+          \begin{bmatrix}
+            45 & 125 & 150 \\
+            40 & 120 & 170 \\
+            50 & 130 & 160
+          \end{bmatrix}
+          \begin{bmatrix}
+            x_1 \\ x_2 \\ x_3
+          \end{bmatrix}.
+        \]
+    \end{itemize}
+
+  \item \textbf{Using Linear Mappings for Decision-Making:}
+    \begin{itemize}
+      \item To compare costs across shops, evaluate the cost functions for given quantities of rice, dal, and oil.
+      \item Example: For $x_1 = 2$ kg (rice), $x_2 = 1$ kg (dal), $x_3 = 2$ liters (oil):
+        \[
+          c_A(2, 1, 2) = 515, \quad c_B(2, 1, 2) = 540, \quad c_C(2, 1, 2) = 550.
+        \]
+      \item Shop A is the most economical in this scenario.
+    \end{itemize}
+
+  \item \textbf{General Form of Linear Mappings:}
+    \begin{itemize}
+      \item A general linear mapping $f: \mathbb{R}^n \to \mathbb{R}^m$ has the form:
+        \[
+          f(x_1, x_2, \dots, x_n) =
+          \begin{bmatrix}
+            \sum_{j=1}^n a_{1j}x_j \\
+            \sum_{j=1}^n a_{2j}x_j \\
+            \vdots \\
+            \sum_{j=1}^n a_{mj}x_j
+          \end{bmatrix},
+        \]
+        where $a_{ij} \in \mathbb{R}$ are constants.
+      \item This can be expressed as:
+        \[
+          f(x) = A \cdot x,
+        \]
+        where $A$ is an $m \times n$ matrix and $x$ is a column vector.
+    \end{itemize}
+
+  \item \textbf{Linearity of Mappings:}
+    \begin{itemize}
+      \item Linearity ensures that:
+        \[
+          f(x + c \cdot y) = f(x) + c \cdot f(y),
+        \]
+        where $x, y \in \mathbb{R}^n$ and $c \in \mathbb{R}$.
+      \item This property simplifies computations, allowing for decomposition and scaling of inputs.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Example: Cost Vector for Three Shops}
+Prices for rice, dal, and oil:
+\[
+  \text{Shop A: } [45, 125, 150], \quad
+  \text{Shop B: } [40, 120, 170], \quad
+  \text{Shop C: } [50, 130, 160].
+\]
+\begin{itemize}
+  \item For $x_1 = 2$ (rice), $x_2 = 1$ (dal), $x_3 = 2$ (oil):
+    \[
+      c_A(2, 1, 2) = 515, \quad c_B(2, 1, 2) = 540, \quad c_C(2, 1, 2) = 550.
+    \]
+  \item Matrix form:
+    \[
+      c(x) =
+      \begin{bmatrix}
+        45 & 125 & 150 \\
+        40 & 120 & 170 \\
+        50 & 130 & 160
+      \end{bmatrix}
+      \begin{bmatrix}
+        x_1 \\ x_2 \\ x_3
+      \end{bmatrix}.
+    \]
+\end{itemize}
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Explored linear mappings through real-world cost functions in multiple shops.
+  \item Defined the general form of a linear mapping using matrices.
+  \item Highlighted the computational advantages of linearity in comparing and analyzing functions.
+\end{itemize}
+
+Linear mappings are powerful tools for representing and solving problems involving linear relationships in various dimensions.
+
+\end{document}
