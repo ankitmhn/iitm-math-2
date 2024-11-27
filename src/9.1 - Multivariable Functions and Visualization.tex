@@ -1,0 +1,116 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Multivariable Functions and Visualization}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Multivariable Functions - Visualization.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Single-Variable Functions Recap:}
+    \begin{itemize}
+      \item Functions of the form $f(x)$ map a domain $D \subset \mathbb{R}$ to $\mathbb{R}$.
+      \item Examples include:
+        \begin{itemize}
+          \item Linear: $f(x) = ax + b$.
+          \item Polynomial: $f(x) = x^2 + x + 1$.
+          \item Rational: $f(x) = \frac{x}{x^2 + 1}$.
+          \item Trigonometric: $\sin(x), \cos(x)$, etc.
+          \item Exponential: $e^x$.
+          \item Logarithmic: $\log(x)$ (domain restricted to $x > 0$).
+          \item Compositions: $\log(x^2 + 1)$, $e^{\sin(x)}$.
+        \end{itemize}
+      \item Key operations include addition, multiplication, and composition of functions.
+    \end{itemize}
+
+  \item \textbf{Scalar-Valued Multivariable Functions:}
+    \begin{itemize}
+      \item A scalar-valued multivariable function maps $f: D \subset \mathbb{R}^n \to \mathbb{R}$.
+      \item Examples:
+        \begin{itemize}
+          \item Linear: $f(x_1, x_2, \dots, x_n) = a_1 x_1 + a_2 x_2 + \dots + a_n x_n$.
+          \item Polynomial: $f(x_1, x_2, x_3) = x_1^2 + x_2^3 x_3 - x_3^6$.
+          \item Rational: $f(x, y) = \frac{x}{x^2 + y^2}$ (domain excludes $x = y = 0$).
+          \item Combinations: $f(x, y) = \sin(x^2 + y^2)$.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Vector-Valued Multivariable Functions:}
+    \begin{itemize}
+      \item A vector-valued multivariable function maps $f: D \subset \mathbb{R}^n \to \mathbb{R}^m$.
+      \item Examples:
+        \begin{itemize}
+          \item $f(x, y, z) = (x^2 + y^2, y^2 + z^2, z^2 + x^2)$.
+          \item $f(x, y, z) = (\sin(x), \cos(y), e^z)$.
+        \end{itemize}
+      \item Such functions represent vectors whose components are scalar-valued multivariable functions.
+    \end{itemize}
+
+  \item \textbf{Operations on Multivariable Functions:}
+    \begin{itemize}
+      \item Arithmetic: Addition, subtraction, and scalar multiplication extend naturally.
+      \item Products: $f \cdot g$ is defined for scalar-valued functions.
+      \item Division: $f / g$ is defined where $g \neq 0$.
+      \item Composition: If $f: D \subset \mathbb{R}^n \to \mathbb{R}^m$ and $g: E \subset \mathbb{R}^m \to \mathbb{R}^p$ such that $\text{range}(f) \subseteq E$, then $g \circ f$ is well-defined.
+    \end{itemize}
+
+  \item \textbf{Visualization of Multivariable Functions:}
+    \begin{itemize}
+      \item Graphs of $f: \mathbb{R}^2 \to \mathbb{R}$ are surfaces in $\mathbb{R}^3$.
+      \item Examples:
+        \begin{itemize}
+          \item Linear: $f(x, y) = ax + by$ forms a plane.
+          \item Rational: $f(x, y) = \frac{xy}{x^2 + y^2}$ forms a surface with undefined behavior at $(0, 0)$.
+          \item Trigonometric: $f(x, y) = \sin(x^2 + y^2)$ oscillates in concentric circles.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Curves in Multivariable Functions:}
+    \begin{itemize}
+      \item Curves are special cases of multivariable functions: $f: \mathbb{R} \to \mathbb{R}^m$.
+      \item Examples:
+        \begin{itemize}
+          \item Helix: $\gamma(t) = (\cos(t), \sin(t), t)$ in $\mathbb{R}^3$.
+          \item Circle: $\gamma(t) = (a \cos(t), b \sin(t))$ in $\mathbb{R}^2$.
+        \end{itemize}
+      \item Curves can be described parametrically or as sets of equations.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Scalar-Valued Functions:}
+Map from $\mathbb{R}^n$ to $\mathbb{R}$, such as $f(x, y) = x^2 + y^2$.
+
+\textbf{Vector-Valued Functions:}
+Map from $\mathbb{R}^n$ to $\mathbb{R}^m$, such as $f(x, y, z) = (\sin(x), \cos(y), z^2)$.
+
+\textbf{Visualization:}
+Graphs of scalar-valued functions in $\mathbb{R}^2 \to \mathbb{R}$ form surfaces, while higher dimensions are harder to visualize.
+
+\textbf{Curves:}
+Special functions where $n = 1$, such as the helix $\gamma(t) = (\cos(t), \sin(t), t)$.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Introduced scalar- and vector-valued multivariable functions.
+  \item Explored operations, including addition, multiplication, and composition.
+  \item Visualized multivariable functions and curves with examples.
+\end{itemize}
+
+Multivariable functions generalize single-variable functions, forming the basis for multivariable calculus and its applications in geometry and data science.
+
+\end{document}

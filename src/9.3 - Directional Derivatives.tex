@@ -1,0 +1,109 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Directional Derivatives}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Directional Derivatives.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Definition of Directional Derivative:}
+    \begin{itemize}
+      \item The directional derivative of a scalar function $f(x_1, x_2, \dots, x_n)$ at a point $\vec{a}$ in the direction of a unit vector $\vec{u}$ is:
+        \[
+          D_{\vec{u}} f(\vec{a}) = \lim_{h \to 0} \frac{f(\vec{a} + h \vec{u}) - f(\vec{a})}{h}.
+        \]
+      \item It measures the rate of change of $f$ in the direction of $\vec{u}$.
+    \end{itemize}
+
+  \item \textbf{Relation to Partial Derivatives:}
+    \begin{itemize}
+      \item If $\vec{u} = \vec{e}_i$ (a standard unit vector), the directional derivative reduces to the partial derivative:
+        \[
+          D_{\vec{e}_i} f(\vec{a}) = \frac{\partial f}{\partial x_i}(\vec{a}).
+        \]
+      \item Directional derivatives generalize partial derivatives to arbitrary directions.
+    \end{itemize}
+
+  \item \textbf{Computing Directional Derivatives:}
+    \begin{itemize}
+      \item If $\vec{u} = (u_1, u_2, \dots, u_n)$ and $\vec{a} = (a_1, a_2, \dots, a_n)$, then:
+        \[
+          D_{\vec{u}} f(\vec{a}) = \sum_{i=1}^n u_i \frac{\partial f}{\partial x_i}(\vec{a}).
+        \]
+      \item This formula shows that directional derivatives are a weighted sum of partial derivatives.
+    \end{itemize}
+
+  \item \textbf{Examples:}
+    \begin{itemize}
+      \item Example 1: For $f(x, y) = x + y$ at $(0, 0)$ in the direction of $\vec{u} = \frac{1}{\sqrt{2}}(1, 1)$:
+        \[
+          D_{\vec{u}} f(0, 0) = \frac{1}{\sqrt{2}} \cdot 1 + \frac{1}{\sqrt{2}} \cdot 1 = \sqrt{2}.
+        \]
+      \item Example 2: For $f(x, y, z) = xy + yz + zx$ at $(1, 2, 3)$ in the direction of $\vec{u} = \frac{1}{5}(4, 3, 0)$:
+        \[
+          D_{\vec{u}} f(1, 2, 3) = \frac{4}{5} \cdot 5 + \frac{3}{5} \cdot 4 = \frac{32}{5}.
+        \]
+    \end{itemize}
+
+  \item \textbf{Properties of Directional Derivatives:}
+    \begin{itemize}
+      \item \textbf{Linearity:}
+        \[
+          D_{\vec{u}} (c f + g)(\vec{a}) = c D_{\vec{u}} f(\vec{a}) + D_{\vec{u}} g(\vec{a}).
+        \]
+      \item \textbf{Product Rule:}
+        \[
+          D_{\vec{u}} (f \cdot g)(\vec{a}) = f(\vec{a}) D_{\vec{u}} g(\vec{a}) + g(\vec{a}) D_{\vec{u}} f(\vec{a}).
+        \]
+      \item \textbf{Quotient Rule:}
+        \[
+          D_{\vec{u}} \left(\frac{f}{g}\right)(\vec{a}) = \frac{g(\vec{a}) D_{\vec{u}} f(\vec{a}) - f(\vec{a}) D_{\vec{u}} g(\vec{a})}{g(\vec{a})^2}.
+        \]
+    \end{itemize}
+
+  \item \textbf{Geometric Interpretation:}
+    \begin{itemize}
+      \item The directional derivative is the slope of the graph of $f$ along the line in the direction of $\vec{u}$.
+      \item It captures the instantaneous rate of change of $f$ at a point in any direction.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{What is a Directional Derivative?}
+It measures how a function changes as we move in a specific direction, generalizing the concept of partial derivatives.
+
+\textbf{How to Compute It?}
+Use the formula:
+\[
+  D_{\vec{u}} f(\vec{a}) = \sum u_i \frac{\partial f}{\partial x_i}(\vec{a}),
+\]
+where $u_i$ are components of the unit vector $\vec{u}$.
+
+\textbf{Examples:}
+For $f(x, y) = x + y$ at $(0, 0)$, moving diagonally at $45^\circ$ (direction $\vec{u} = (1/\sqrt{2}, 1/\sqrt{2})$), the rate of change is $\sqrt{2}$.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Defined directional derivatives as a generalization of partial derivatives.
+  \item Demonstrated computation techniques using both limits and formulas.
+  \item Highlighted their geometric and practical significance.
+\end{itemize}
+
+Directional derivatives are fundamental tools in multivariable calculus, crucial for understanding gradients and optimization.
+
+\end{document}

@@ -1,0 +1,103 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Continuity for Multivariable Functions}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lec57\_corrected.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Limits for Scalar-Valued Multivariable Functions (Recap):}
+    \begin{itemize}
+      \item A scalar function $f: D \subset \mathbb{R}^n \to \mathbb{R}$ has a limit $L$ at $\vec{a} \in \mathbb{R}^n$ if for all sequences $\{\vec{a}_n\} \subset D$ converging to $\vec{a}$, $f(\vec{a}_n) \to L$.
+      \item If the limit exists, it is independent of the path taken to approach $\vec{a}$.
+    \end{itemize}
+
+  \item \textbf{Limits for Vector-Valued Multivariable Functions:}
+    \begin{itemize}
+      \item A vector-valued function $f: D \subset \mathbb{R}^n \to \mathbb{R}^m$ has a limit $\vec{L} = (L_1, L_2, \dots, L_m)$ at $\vec{a} \in \mathbb{R}^n$ if:
+        \[
+          \lim_{\vec{x} \to \vec{a}} f_i(\vec{x}) = L_i \quad \text{for each component } f_i.
+        \]
+      \item If any component's limit does not exist, the limit of $f$ does not exist.
+    \end{itemize}
+
+  \item \textbf{Limits Along a Curve:}
+    \begin{itemize}
+      \item Consider a scalar function $f: D \subset \mathbb{R}^n \to \mathbb{R}$ and a curve $C$ passing through $\vec{a}$.
+      \item The limit of $f$ at $\vec{a}$ along $C$ exists and equals $L$ if for every sequence $\{\vec{a}_n\} \subset C$ converging to $\vec{a}$, $f(\vec{a}_n) \to L$.
+      \item If limits along different curves yield different values, the global limit at $\vec{a}$ does not exist.
+    \end{itemize}
+
+  \item \textbf{Continuity of a Multivariable Function:}
+    \begin{itemize}
+      \item A function $f: D \subset \mathbb{R}^n \to \mathbb{R}$ is continuous at $\vec{a} \in D$ if:
+        \[
+          \lim_{\vec{x} \to \vec{a}} f(\vec{x}) = f(\vec{a}).
+        \]
+      \item This is equivalent to saying that for every sequence $\{\vec{a}_n\} \subset D$ converging to $\vec{a}$, $f(\vec{a}_n) \to f(\vec{a})$.
+      \item A function is continuous on $D$ if it is continuous at every point $\vec{a} \in D$.
+    \end{itemize}
+
+  \item \textbf{Examples:}
+    \begin{itemize}
+      \item \textbf{Example 1:} For $f(x, y) = x^2 + y^2$, the limit at $(0, 0)$ exists and equals $0$. The function is continuous everywhere.
+      \item \textbf{Example 2:} For $f(x, y) = \frac{x^2 - y^2}{x^2 + y^2}$:
+        \begin{itemize}
+          \item Along $x$-axis ($y = 0$): $\lim_{(x, y) \to (0, 0)} f(x, y) = 1$.
+          \item Along $y$-axis ($x = 0$): $\lim_{(x, y) \to (0, 0)} f(x, y) = -1$.
+        \end{itemize}
+        The global limit does not exist due to path dependence.
+      \item \textbf{Example 3:} For $f(x, y) = \frac{xy}{x^2 + y^2}$:
+        \begin{itemize}
+          \item Along $x$-axis ($y = 0$) and $y$-axis ($x = 0$): $\lim_{(x, y) \to (0, 0)} f(x, y) = 0$.
+          \item Along $y = x$: $\lim_{(x, y) \to (0, 0)} f(x, y) = \frac{1}{2}$.
+        \end{itemize}
+        Since limits along different paths do not match, the global limit does not exist.
+    \end{itemize}
+
+  \item \textbf{Connection Between Curve Limits and Global Limits:}
+    \begin{itemize}
+      \item The global limit $\lim_{\vec{x} \to \vec{a}} f(\vec{x}) = L$ exists if and only if:
+        \[
+          \lim_{\vec{x} \to \vec{a}} f(\vec{x}) \text{ along every curve } C \text{ passing through } \vec{a} \text{ equals } L.
+        \]
+      \item If limits along any two curves differ, the global limit does not exist.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{What Are We Studying?}
+How to determine if a multivariable function has a limit or is continuous at a point.
+
+\textbf{Key Points:}
+- A limit exists if the function approaches the same value along all paths to a point.
+- Continuity requires the function's limit at a point to equal its value at that point.
+
+\textbf{Example:}
+For $f(x, y) = \frac{x^2 - y^2}{x^2 + y^2}$, limits along different axes differ, so the limit does not exist globally.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Defined limits for scalar- and vector-valued multivariable functions.
+  \item Introduced continuity for multivariable functions.
+  \item Explored examples to illustrate limits and continuity.
+\end{itemize}
+
+Understanding limits and continuity is foundational for analyzing multivariable functions in higher-dimensional calculus.
+
+\end{document}

@@ -1,0 +1,113 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Directional Derivatives in Terms of the Gradient}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Directional derivatives in terms of the gradient.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Definition of Gradient:}
+    \begin{itemize}
+      \item The gradient of a scalar function $f(x_1, x_2, \dots, x_n)$ is:
+        \[
+          \nabla f = \left( \frac{\partial f}{\partial x_1}, \frac{\partial f}{\partial x_2}, \dots, \frac{\partial f}{\partial x_n} \right).
+        \]
+      \item It is a vector-valued function from $\mathbb{R}^n$ to $\mathbb{R}^n$.
+      \item At a point $\vec{a} \in \mathbb{R}^n$, the gradient vector is $\nabla f(\vec{a})$.
+    \end{itemize}
+
+  \item \textbf{Directional Derivatives in Terms of the Gradient:}
+    \begin{itemize}
+      \item The directional derivative of $f$ at $\vec{a}$ in the direction of a unit vector $\vec{u}$ is:
+        \[
+          D_{\vec{u}} f(\vec{a}) = \nabla f(\vec{a}) \cdot \vec{u}.
+        \]
+      \item This simplifies the computation of directional derivatives compared to using limits directly.
+    \end{itemize}
+
+  \item \textbf{Examples:}
+    \begin{itemize}
+      \item Example 1: For $f(x, y) = x + y$, the gradient is $\nabla f = (1, 1)$.
+        \[
+          D_{\vec{u}} f(x, y) = (1, 1) \cdot \vec{u} = u_1 + u_2.
+        \]
+      \item Example 2: For $f(x, y, z) = xy + yz + zx$, the gradient is $\nabla f = (y + z, x + z, x + y)$.
+        \[
+          D_{\vec{u}} f(x, y, z) = (y + z, x + z, x + y) \cdot \vec{u} = u_1(y + z) + u_2(x + z) + u_3(x + y).
+        \]
+      \item Example 3: For $f(x, y) = \sin(xy)$, the gradient is $\nabla f = (y\cos(xy), x\cos(xy))$.
+        \[
+          D_{\vec{u}} f(x, y) = (y\cos(xy), x\cos(xy)) \cdot \vec{u} = u_1 y \cos(xy) + u_2 x \cos(xy).
+        \]
+    \end{itemize}
+
+  \item \textbf{Properties of the Gradient:}
+    \begin{itemize}
+      \item \textbf{Linearity:}
+        \[
+          \nabla (cf + g) = c \nabla f + \nabla g.
+        \]
+      \item \textbf{Product Rule:}
+        \[
+          \nabla (fg) = g \nabla f + f \nabla g.
+        \]
+      \item \textbf{Quotient Rule:}
+        \[
+          \nabla \left(\frac{f}{g}\right) = \frac{g \nabla f - f \nabla g}{g^2}.
+        \]
+    \end{itemize}
+
+  \item \textbf{Importance of the Gradient:}
+    \begin{itemize}
+      \item The gradient vector $\nabla f$ at $\vec{a}$ indicates the direction of steepest ascent of $f$ at that point.
+      \item The magnitude $\|\nabla f(\vec{a})\|$ gives the rate of steepest ascent.
+    \end{itemize}
+
+  \item \textbf{Continuity of the Gradient:}
+    \begin{itemize}
+      \item If $\nabla f$ is continuous around $\vec{a}$, then $D_{\vec{u}} f(\vec{a})$ exists and equals $\nabla f(\vec{a}) \cdot \vec{u}$.
+      \item If $\nabla f$ is not continuous, the formula $D_{\vec{u}} f(\vec{a}) = \nabla f(\vec{a}) \cdot \vec{u}$ may fail.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Gradient Vector:}
+A vector of partial derivatives that points in the direction of steepest ascent.
+
+\textbf{Directional Derivative:}
+Instead of using limits, compute the directional derivative using:
+\[
+  D_{\vec{u}} f(\vec{a}) = \nabla f(\vec{a}) \cdot \vec{u}.
+\]
+
+\textbf{Example:}
+For $f(x, y) = x + y$ and $\vec{u} = (1/\sqrt{2}, 1/\sqrt{2})$:
+\[
+  D_{\vec{u}} f(0, 0) = (1, 1) \cdot (1/\sqrt{2}, 1/\sqrt{2}) = \sqrt{2}.
+\]
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Defined the gradient and its role in computing directional derivatives.
+  \item Highlighted the connection between gradients and rates of change.
+  \item Demonstrated examples to illustrate the use of gradients in multivariable calculus.
+\end{itemize}
+
+The gradient simplifies directional derivative calculations and provides geometric insights into the behavior of multivariable functions.
+
+\end{document}

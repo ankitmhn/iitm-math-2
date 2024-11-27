@@ -1,0 +1,103 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Limits for Scalar-Valued Multivariable Functions}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Limits for Scalar-Valued Multivariable Functions.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Limit of a Sequence in $\mathbb{R}^n$:}
+    \begin{itemize}
+      \item A sequence $\{\vec{a}_n\}$ in $\mathbb{R}^n$ converges to $\vec{a} = (a_1, a_2, \dots, a_n)$ if and only if each coordinate sequence converges:
+        \[
+          \lim_{n \to \infty} a_{n,i} = a_i, \quad \text{for all } i = 1, 2, \dots, n.
+        \]
+      \item Example:
+        \[
+          \left\{\left(\frac{1}{n}, n\sin\left(\frac{1}{n}\right)\right)\right\}
+        \]
+        converges to $(0, 1)$ because $\frac{1}{n} \to 0$ and $n\sin\left(\frac{1}{n}\right) \to 1$.
+    \end{itemize}
+
+  \item \textbf{Definition of Limit for a Multivariable Function:}
+    \begin{itemize}
+      \item Let $f: D \subset \mathbb{R}^n \to \mathbb{R}$ be a scalar-valued multivariable function, and $\vec{a} \in \mathbb{R}^n$. Then:
+        \[
+          \lim_{\vec{x} \to \vec{a}} f(\vec{x}) = L
+        \]
+        if for every sequence $\{\vec{a}_n\} \subset D$ with $\vec{a}_n \to \vec{a}$, we have $f(\vec{a}_n) \to L$.
+      \item This definition generalizes the notion of a limit from single-variable calculus.
+    \end{itemize}
+
+  \item \textbf{Examples of Limits:}
+    \begin{itemize}
+      \item Example 1: For $f(x, y) = x^2 + y^2$, as $(x, y) \to (0, 0)$:
+        \[
+          \lim_{(x, y) \to (0, 0)} f(x, y) = 0.
+        \]
+      \item Example 2: For $f(x, y) = \frac{x^2 - y^2}{x^2 + y^2}$, as $(x, y) \to (0, 0)$:
+        \[
+          \lim_{(x, y) \to (0, 0)} f(x, y) \text{ does not exist},
+        \]
+        because the limit depends on the path taken (e.g., along $x = y$ versus $x = -y$).
+    \end{itemize}
+
+  \item \textbf{Properties of Limits:}
+    \begin{itemize}
+      \item \textbf{Linearity:} For $c \in \mathbb{R}$:
+        \[
+          \lim_{\vec{x} \to \vec{a}} [cf(\vec{x}) + g(\vec{x})] = c \lim_{\vec{x} \to \vec{a}} f(\vec{x}) + \lim_{\vec{x} \to \vec{a}} g(\vec{x}).
+        \]
+      \item \textbf{Product Rule:}
+        \[
+          \lim_{\vec{x} \to \vec{a}} [f(\vec{x}) \cdot g(\vec{x})] = \lim_{\vec{x} \to \vec{a}} f(\vec{x}) \cdot \lim_{\vec{x} \to \vec{a}} g(\vec{x}).
+        \]
+      \item \textbf{Quotient Rule:} If $\lim_{\vec{x} \to \vec{a}} g(\vec{x}) \neq 0$:
+        \[
+          \lim_{\vec{x} \to \vec{a}} \frac{f(\vec{x})}{g(\vec{x})} = \frac{\lim_{\vec{x} \to \vec{a}} f(\vec{x})}{\lim_{\vec{x} \to \vec{a}} g(\vec{x})}.
+        \]
+    \end{itemize}
+
+  \item \textbf{Special Techniques:}
+    \begin{itemize}
+      \item \textbf{Substitution:} For well-behaved functions, limits can often be computed by direct substitution.
+      \item \textbf{Sandwich (Squeeze) Theorem:} If $f(\vec{x}) \leq h(\vec{x}) \leq g(\vec{x})$ for all $\vec{x}$ near $\vec{a}$, and $\lim_{\vec{x} \to \vec{a}} f(\vec{x}) = \lim_{\vec{x} \to \vec{a}} g(\vec{x}) = L$, then $\lim_{\vec{x} \to \vec{a}} h(\vec{x}) = L$.
+      \item \textbf{Path Dependence:} To check if a limit exists, evaluate along different paths. If the results differ, the limit does not exist.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{What Are Limits for Multivariable Functions?}
+Limits describe the behavior of a function $f(\vec{x})$ as $\vec{x}$ approaches a point $\vec{a}$ in $\mathbb{R}^n$.
+
+\textbf{How to Compute Limits?}
+Check if the function approaches the same value along all paths leading to $\vec{a}$. If not, the limit does not exist.
+
+\textbf{Example:}
+For $f(x, y) = \frac{x^2 - y^2}{x^2 + y^2}$, paths $x = y$ and $x = -y$ yield different limits at $(0, 0)$, so the limit does not exist.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Defined limits for scalar-valued multivariable functions.
+  \item Explored techniques for computing and analyzing limits.
+  \item Highlighted examples and the importance of path dependence.
+\end{itemize}
+
+Understanding limits in multivariable calculus is crucial for studying continuity, derivatives, and integrals in higher dimensions.
+
+\end{document}

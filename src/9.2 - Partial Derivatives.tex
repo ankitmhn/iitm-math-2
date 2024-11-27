@@ -1,0 +1,97 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Partial Derivatives}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Partial Derivatives.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Definition of Partial Derivatives:}
+    \begin{itemize}
+      \item For a scalar-valued function $f(x_1, x_2, \dots, x_n)$ defined on a domain $D \subset \mathbb{R}^n$, the partial derivative with respect to $x_i$ at a point $\vec{a} \in \mathbb{R}^n$ is:
+        \[
+          \frac{\partial f}{\partial x_i}(\vec{a}) = \lim_{h \to 0} \frac{f(\vec{a} + h\vec{e}_i) - f(\vec{a})}{h},
+        \]
+        where $\vec{e}_i$ is the $i$th standard basis vector.
+      \item Partial derivatives measure the rate of change of $f$ with respect to one variable, keeping all other variables constant.
+    \end{itemize}
+
+  \item \textbf{Interpretation:}
+    \begin{itemize}
+      \item Partial derivatives generalize the concept of derivatives from single-variable calculus to multivariable functions.
+      \item They capture the slope of the function in the direction of the $i$th coordinate axis.
+    \end{itemize}
+
+  \item \textbf{Examples of Partial Derivatives:}
+    \begin{itemize}
+      \item Example 1: For $f(x, y) = x + y$:
+        \[
+          \frac{\partial f}{\partial x} = 1, \quad \frac{\partial f}{\partial y} = 1.
+        \]
+      \item Example 2: For $f(x, y, z) = xy + yz + zx$:
+        \[
+          \frac{\partial f}{\partial x} = y + z, \quad \frac{\partial f}{\partial y} = x + z, \quad \frac{\partial f}{\partial z} = x + y.
+        \]
+      \item Example 3: For $f(x, y) = \sin(xy)$:
+        \[
+          \frac{\partial f}{\partial x} = y\cos(xy), \quad \frac{\partial f}{\partial y} = x\cos(xy).
+        \]
+    \end{itemize}
+
+  \item \textbf{Computing Partial Derivatives:}
+    \begin{itemize}
+      \item To compute $\frac{\partial f}{\partial x_i}$:
+        \begin{enumerate}
+          \item Treat $x_i$ as the only variable.
+          \item Treat all other variables as constants.
+          \item Differentiate $f$ with respect to $x_i$ using standard differentiation rules.
+        \end{enumerate}
+      \item For well-behaved (smooth) functions, this process is straightforward. For piecewise or non-smooth functions, limits may be required.
+    \end{itemize}
+
+  \item \textbf{Applications of Partial Derivatives:}
+    \begin{itemize}
+      \item Analyze the behavior of multivariable functions, such as rates of change in physical systems.
+      \item Compute gradients and optimize multivariable functions.
+      \item Formulate equations in physics, engineering, and economics.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{What Are Partial Derivatives?}
+Partial derivatives measure how a multivariable function changes when only one variable changes, keeping the others fixed.
+
+\textbf{How to Compute Them?}
+Treat one variable as the only variable and differentiate as usual, treating all others as constants.
+
+\textbf{Example:}
+For $f(x, y) = x^2 + 3y$:
+\[
+  \frac{\partial f}{\partial x} = 2x, \quad \frac{\partial f}{\partial y} = 3.
+\]
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Defined partial derivatives as a natural extension of single-variable derivatives.
+  \item Explored examples to compute partial derivatives.
+  \item Highlighted their applications in analyzing multivariable systems.
+\end{itemize}
+
+Partial derivatives are foundational in multivariable calculus, enabling detailed exploration of functions with several variables.
+
+\end{document}
